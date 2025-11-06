@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Clients.home.HomeFragment">
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tv_dashboard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bridge Talent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- App Subtitle -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connecting Job Seekers &amp; Employers"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        android:textColor="#444"
+        android:layout_below="@id/tv_dashboard_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <!-- Complete Profile Badge -->
+    <TextView
+        android:id="@+id/btn_complete_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complete Profile"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/complete_profile_bg"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:layout_below="@id/tv_subtitle"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:visibility="visible" />
+
+    <!-- Section Title: Articles -->
+    <TextView
+        android:id="@+id/tv_articles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Articles"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#0A57BF"
+        android:layout_below="@id/tv_subtitle"
+        android:layout_marginTop="18dp" />
+
+    <!-- Articles RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_articles"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_below="@id/tv_articles"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="4dp"
+        tools:listitem="@layout/item_article" />
+
+    <!-- Section Title: Available Jobs -->
+    <TextView
+        android:id="@+id/tv_jobs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Jobs"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#0A57BF"
+        android:layout_below="@id/rv_articles"
+        android:layout_marginTop="14dp" />
+
+    <!-- Jobs RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_jobs"
+        android:layout_above="@+id/bottom_nav"
+        android:padding="4dp"
+        android:layout_marginTop="6dp"
+        tools:listitem="@layout/item_job_banner" />
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#EEEEEE"
+        android:gravity="center"
+        android:padding="4dp">
+
+        <!-- Home -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/icon_home"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="#000" />
+        </LinearLayout>
+
+        <!-- About -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/icon_about"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_info" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:textSize="12sp"
+                android:textColor="#000" />
+        </LinearLayout>
+
+        <!-- Profile -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/icon_profile"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_profile" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="12sp"
+                android:textColor="#000" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

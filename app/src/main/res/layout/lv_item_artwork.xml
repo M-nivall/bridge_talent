@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".Clients.home.HomeFragment">
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tv_dashboard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bridge Talent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+
+    <!-- App Subtitle -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connecting Job Seekers and Employers"
+        android:textSize="14sp"
+        android:textColor="#777"
+        android:layout_below="@id/tv_dashboard_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <!-- Section Title: Available Jobs -->
+    <TextView
+        android:id="@+id/tv_jobs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Jobs"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#0A57BF"
+        android:layout_below="@id/tv_subtitle"
+        android:layout_marginTop="20dp" />
+
+    <!-- Jobs RecyclerView (Horizontal) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_below="@id/tv_jobs"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="4dp"
+        tools:listitem="@layout/item_job_banner"/>
+
+    <!-- Section Title: Educational Articles -->
+    <TextView
+        android:id="@+id/tv_articles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Educational Articles"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#0A57BF"
+        android:layout_below="@id/rv_jobs"
+        android:layout_marginTop="20dp" />
+
+    <!-- Articles RecyclerView (Vertical / Grid) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_articles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_articles"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        tools:listitem="@layout/item_article" />
+
+</RelativeLayout>
