@@ -49,6 +49,9 @@ public class AppliedJobs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_applied_jobs);
 
+        getSupportActionBar().setSubtitle("Job Applications");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -101,10 +104,11 @@ public class AppliedJobs extends AppCompatActivity {
                                     String companyName=jsn.getString("company_name");
                                     String email=jsn.getString("email");
                                     String industry=jsn.getString("industry");
+                                    String employerFeedback=jsn.getString("employer_feedback");
 
                                     AppliedJobsModel appliedJobsModel = new AppliedJobsModel(
                                             applicationID, jobID, dateApplied, applicationStatus,
-                                            title, description, location, jobType, companyName, email, industry
+                                            title, description, location, jobType, companyName, email, industry, employerFeedback
                                     );
                                     list.add(appliedJobsModel);
                                 }

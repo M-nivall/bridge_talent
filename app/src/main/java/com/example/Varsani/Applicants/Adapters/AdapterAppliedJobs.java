@@ -101,6 +101,7 @@ public class AdapterAppliedJobs extends RecyclerView.Adapter<RecyclerView.ViewHo
                     in.putExtra("companyName", o.getCompanyName());
                     in.putExtra("email", o.getEmail());
                     in.putExtra("industry", o.getIndustry());
+                    in.putExtra("employerFeedback", o.getEmployerFeedback());
 
                     ctx.startActivity(in);
                 }

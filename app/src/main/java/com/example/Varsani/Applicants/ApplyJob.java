@@ -64,8 +64,10 @@ public class ApplyJob extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_apply_job);
+
+        getSupportActionBar().setSubtitle("Apply Job");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tv_title = findViewById(R.id.tv_title);
         tv_company = findViewById(R.id.tv_company);

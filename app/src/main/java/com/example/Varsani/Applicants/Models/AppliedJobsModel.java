@@ -13,11 +13,12 @@ public class AppliedJobsModel {
     private String companyName;
     private String email;
     private String industry;
+    private String employerFeedback;
 
     public AppliedJobsModel(String applicationID, String jobID, String dateApplied,
                             String applicationStatus, String title, String description,
                             String location, String jobType, String companyName,
-                            String email, String industry) {
+                            String email, String industry, String employerFeedback) {
 
         this.applicationID = applicationID;
         this.jobID = jobID;
@@ -30,6 +31,7 @@ public class AppliedJobsModel {
         this.companyName = companyName;
         this.email = email;
         this.industry = industry;
+        this.employerFeedback = employerFeedback;
     }
 
     public String getApplicationID() {
@@ -74,5 +76,8 @@ public class AppliedJobsModel {
 
     public String getIndustry() {
         return industry;
+    }
+    public String getEmployerFeedback() {
+        return employerFeedback;
     }
 }
