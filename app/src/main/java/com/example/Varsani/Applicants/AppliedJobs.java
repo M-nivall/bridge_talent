@@ -1,14 +1,11 @@
-package com.example.Varsani.Artists;
-
-import static com.example.Varsani.utils.Urls.URL_APPLIED_EXHIBITIONS;
-import static com.example.Varsani.utils.Urls.URL_GET_APPLICANTS;
+package com.example.Varsani.Applicants;
+import static com.example.Varsani.utils.Urls.URL_APPLIED_JOBS;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -24,12 +21,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.Varsani.Artists.Adapters.AdapterAppliedExhibition;
-import com.example.Varsani.Artists.Models.AppliedExhibitionModel;
+import com.example.Varsani.Applicants.Adapters.AdapterAppliedJobs;
+import com.example.Varsani.Applicants.Models.AppliedJobsModel;
 import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.R;
-import com.example.Varsani.Staff.ExhibitionManager.Adapters.AdapterApplicant;
-import com.example.Varsani.Staff.ExhibitionManager.Models.ApplicantModel;
 import com.example.Varsani.utils.SessionHandler;
 
 import org.json.JSONArray;
@@ -40,9 +35,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AppliedExhibitions extends AppCompatActivity {
-    private List<AppliedExhibitionModel> list;
-    private AdapterAppliedExhibition adapterAppliedExhibition;
+public class AppliedJobs extends AppCompatActivity {
+    private List<AppliedJobsModel> list;
+    private AdapterAppliedJobs adapterAppliedJobs;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
 
@@ -52,7 +47,7 @@ public class AppliedExhibitions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_applied_exhibitions);
+        setContentView(R.layout.activity_applied_jobs);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -80,7 +75,7 @@ public class AppliedExhibitions extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void getApplicants(){
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_APPLIED_EXHIBITIONS,
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_APPLIED_JOBS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -94,21 +89,27 @@ public class AppliedExhibitions extends AppCompatActivity {
                                 JSONArray jsonArray=jsonObject.getJSONArray("details");
                                 for(int i=0; i <jsonArray.length();i++){
                                     JSONObject jsn=jsonArray.getJSONObject(i);
-                                    String ID=jsn.getString("ID");
-                                    String exhibitionID=jsn.getString("exhibitionID");
-                                    String artistID=jsn.getString("artistID");
-                                    String artistName=jsn.getString("artistName");
+                                    String applicationID=jsn.getString("application_id");
+                                    String jobID=jsn.getString("job_id");
+                                    String dateApplied=jsn.getString("date_applied");
+                                    String applicationStatus=jsn.getString("application_status");
                                     String title=jsn.getString("title");
-                                    String artDesc=jsn.getString("artDesc");
-                                    String imageName=jsn.getString("imageName");
-                                    String exStatus=jsn.getString("exStatus");
+                                    String description=jsn.getString("description");
+                                    String location=jsn.getString("location");
+                                    String jobType=jsn.getString("job_type");
 
-                                    AppliedExhibitionModel appliedExhibitionModel=new AppliedExhibitionModel(ID,exhibitionID,artistID,
-                                            artistName,title,artDesc,imageName,exStatus);
-                                    list.add(appliedExhibitionModel);
+                                    String companyName=jsn.getString("company_name");
+                                    String email=jsn.getString("email");
+                                    String industry=jsn.getString("industry");
+
+                                    AppliedJobsModel appliedJobsModel = new AppliedJobsModel(
+                                            applicationID, jobID, dateApplied, applicationStatus,
+                                            title, description, location, jobType, companyName, email, industry
+                                    );
+                                    list.add(appliedJobsModel);
                                 }
-                                adapterAppliedExhibition=new AdapterAppliedExhibition(getApplicationContext(),list);
-                                recyclerView.setAdapter(adapterAppliedExhibition);
+                                adapterAppliedJobs=new AdapterAppliedJobs(getApplicationContext(),list);
+                                recyclerView.setAdapter(adapterAppliedJobs);
                                 progressBar.setVisibility(View.GONE);
 
                             }else{

@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.example.Varsani.Artists.AppliedExhibitions;
+import com.example.Varsani.Applicants.AppliedJobs;
 import com.example.Varsani.Artists.MyDonationHistory;
 import com.example.Varsani.Artists.MyDonations;
 import com.example.Varsani.Clients.CompletedServices;
@@ -22,9 +21,7 @@ import com.example.Varsani.Clients.ServiceItems;
 import com.example.Varsani.Clients.SupplierLogin;
 import com.example.Varsani.Clients.home.HomeFragment;
 import com.example.Varsani.Staff.Dashboard;
-import com.example.Varsani.Staff.Finance.NewDonations;
 import com.example.Varsani.Staff.Models.DonationHistory;
-import com.example.Varsani.Staff.SelectLogin;
 import com.example.Varsani.Clients.About;
 import com.example.Varsani.Clients.Adapters.AdapterProducts;
 import com.example.Varsani.Clients.CartItems;
@@ -35,7 +32,6 @@ import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.Clients.Orders_hist;
 import com.example.Varsani.Clients.Profile;
 import com.example.Varsani.Clients.Register;
-import com.example.Varsani.R;
 import com.example.Varsani.Staff.StaffLogin;
 import com.example.Varsani.Students.Workshops;
 import com.example.Varsani.Suppliers.MyRequests;
@@ -49,7 +45,6 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
-import androidx.core.view.MenuItemCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -142,8 +137,8 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_donation_history) {
                     Intent dh = new Intent(getApplicationContext(), DonationHistory.class);
                     startActivity(dh);
-                } else if (id == R.id.nav_applied_exhibitions) {
-                    Intent nae = new Intent(getApplicationContext(), AppliedExhibitions.class);
+                } else if (id == R.id.nav_applied_jobs) {
+                    Intent nae = new Intent(getApplicationContext(), AppliedJobs.class);
                     startActivity(nae);
                 } else if (id == R.id.nav_request) {
                     Intent nr = new Intent(getApplicationContext(), MyRequests.class);
@@ -250,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_workshops).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_my_donation_history).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_donation_history).setVisible(false);
-        navigationView.getMenu().findItem(R.id.nav_applied_exhibitions).setVisible(false);
+        navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(false);
 
         if (session.isLoggedIn()) {
             navigationView.getMenu().findItem(R.id.nav_register).setVisible(false);
@@ -269,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                 navigationView.getMenu().findItem(R.id.nav_my_donation).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_workshops).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_my_donation_history).setVisible(true);
-                navigationView.getMenu().findItem(R.id.nav_applied_exhibitions).setVisible(true);
+                navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(true);
             }
 
             if (user.getUser_type().equals("Student")) {

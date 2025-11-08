@@ -24,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.Varsani.Applicants.ApplyJob;
 import com.example.Varsani.Applicants.Models.JobsModel;
 import com.example.Varsani.Artists.Models.ArtworkModel;
 import com.example.Varsani.Artists.ViewDetails;
@@ -150,7 +151,7 @@ public class AdapterJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                             String industry = j.getIndustry();
                             String employerDescription = j.getEmployerDescription();
 
-                            Intent in = new Intent(ctx, ViewDetails.class);
+                            Intent in = new Intent(ctx, ApplyJob.class);
                             in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                             in.putExtra("jobID", jobID);
