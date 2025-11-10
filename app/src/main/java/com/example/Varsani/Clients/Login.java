@@ -22,8 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.Varsani.MainActivity;
-import com.example.Varsani.Staff.Patron.PatronLogin;
-import com.example.Varsani.Staff.SelectLogin;
+import com.example.Varsani.Employers.EmployerLogin;
 import com.example.Varsani.Staff.StaffLogin;
 import com.example.Varsani.utils.SessionHandler;
 import com.example.Varsani.utils.Urls;
@@ -40,7 +39,7 @@ public class Login extends AppCompatActivity {
 
     private Button btn_login;
     private EditText edt_username,edt_password;
-    TextView signuptext,gotostaff,gotoforgot,gotopatron;
+    TextView signuptext,gotostaff,gotoforgot,employer_login;
     private ProgressBar progressBar;
     private SessionHandler session;
     private UserModel user;
@@ -57,7 +56,7 @@ public class Login extends AppCompatActivity {
         progressBar=findViewById(R.id.progressBar);
         gotostaff = findViewById(R.id.gotostaff);
         gotoforgot=findViewById(R.id.gotoforgot);
-        gotopatron=findViewById(R.id.gotopatron);
+        employer_login=findViewById(R.id.employer_login);
 
 
         session=new SessionHandler(getApplicationContext());
@@ -94,10 +93,10 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        gotopatron.setOnClickListener(new View.OnClickListener() {
+        employer_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(), PatronLogin.class);
+                Intent intent=new Intent(getApplicationContext(), EmployerLogin.class);
                 startActivity(intent);
             }
         });

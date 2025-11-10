@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@drawable/login_wallpaper"
-    tools:context=".Companies.RegisterCompany">
+    tools:context=".Employers.RegisterEmployer">
 
 
     <LinearLayout

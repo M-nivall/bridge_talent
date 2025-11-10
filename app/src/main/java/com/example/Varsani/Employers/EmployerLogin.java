@@ -1,4 +1,4 @@
-package com.example.Varsani.Staff.Patron;
+package com.example.Varsani.Employers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +25,6 @@ import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.Clients.Register;
 import com.example.Varsani.MainActivity;
 import com.example.Varsani.R;
-import com.example.Varsani.Staff.SelectLogin;
 import com.example.Varsani.Staff.StaffLogin;
 import com.example.Varsani.utils.SessionHandler;
 import com.example.Varsani.utils.Urls;
@@ -36,7 +35,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PatronLogin extends AppCompatActivity {
+public class EmployerLogin extends AppCompatActivity {
     private Button btn_login;
     private EditText edt_username,edt_password;
     TextView signuptext,gotostaff;
@@ -47,7 +46,7 @@ public class PatronLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patron_login);
+        setContentView(R.layout.activity_employer_login);
 
         btn_login=findViewById(R.id.login_btn);
         signuptext=findViewById(R.id.signupText);
@@ -111,7 +110,7 @@ public class PatronLogin extends AppCompatActivity {
 
         }
 
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, Urls.URL_PATRON_LOGIN,
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, Urls.URL_EMPLOYER_LOGIN,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

@@ -119,10 +119,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Patron Login"
+        android:text="Employer Login"
         android:textSize="14sp"
         android:textAlignment="center"
-        android:id="@+id/gotopatron"
+        android:id="@+id/employer_login"
         android:textColor="@color/colorBlack"
         android:layout_marginBottom="20dp"/>
 

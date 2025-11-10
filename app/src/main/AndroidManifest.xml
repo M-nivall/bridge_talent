@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Companies.RegisterCompany"
+            android:name=".Employers.RegisterEmployer"
             android:exported="false" />
         <activity
             android:name=".Applicants.ApplicationDetails"
@@ -107,7 +107,7 @@
             android:name=".Artists.MyDonations"
             android:exported="false" />
         <activity
-            android:name=".Staff.Patron.PatronLogin"
+            android:name=".Employers.EmployerLogin"
             android:exported="false" />
         <activity
             android:name=".Artists.ViewDetails"

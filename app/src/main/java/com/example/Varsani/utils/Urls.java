@@ -41,8 +41,9 @@ public class Urls {
 
     // checkout
     public static final String URL_GET_CHECKOUT_TOTAL=ROOT_URL + "client/checkout_cost.php";
-    //company
-    public static final String URL_REGISTER_COMPANY = ROOT_URL +"company/register_company.php";
+    //Employer
+    public static final String URL_REGISTER_COMPANY = ROOT_URL +"employer/register_employer.php";
+    public static final String URL_EMPLOYER_LOGIN= ROOT_URL+"employer/employer_login.php";
     // user
     public static final String URL_REG = ROOT_URL +"applicants/register.php";
     public static final String URL_LOGIN= ROOT_URL+"applicants/login.php";
@@ -131,8 +132,8 @@ public class Urls {
     //Exhibition
     public static final String URL_GET_ARTICLES=ROOT_URL + "applicants/articles.php";
     public static final String URL_SUBMIT_EXHIBITION_ART = ROOT_URL + "artist/submit_artwork.php/";
+
     //Patron
-    public static final String URL_PATRON_LOGIN= ROOT_URL+"patron/login.php";
     public static final String URL_DONATE=ROOT_URL + "patron/donate.php";
     public static final String URL_DONATE_EX_ARTWORKS=ROOT_URL + "patron/donate_exhibition_art.php";
     public static final String URL_DONATION_HISTORY=ROOT_URL + "patron/donation_history.php";

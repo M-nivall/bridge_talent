@@ -1,4 +1,4 @@
-package com.example.Varsani.Companies;
+package com.example.Varsani.Employers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -33,7 +29,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterCompany extends AppCompatActivity {
+public class RegisterEmployer extends AppCompatActivity {
     private Button registerBtn;
     private ProgressBar progressBar;
     private EditText edt_company_name,edt_industry,edt_email,edt_phone_number,edt_username,
