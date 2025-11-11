@@ -47,7 +47,7 @@ dependencies {
 
     // ⬇️ Pin Activity libs to 1.9.x (compatible with compileSdk 34 / AGP 8.5.2)
     implementation 'androidx.activity:activity:1.9.2'
-    // If you also use -ktx APIs anywhere, add:
+    // If you also use -ktx APIs anywhere, Add:
     // implementation 'androidx.activity:activity-ktx:1.9.2'
 
     // CardView
