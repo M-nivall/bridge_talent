@@ -148,6 +148,7 @@ public class Urls {
     public static final String URL_APPROVE_ART_BLOG=ROOT_URL + "exhibition_mrg/approve_art_blog.php";
     public static final String URL_ADD_INVENTORY=ROOT_URL + "exhibition_mrg/add_inventory.php";
     public static final String URL_GET_ART_INVENTORY=ROOT_URL + "exhibition_mrg/art_inventory.php";
+
     //Mentor
     public static final String URL_CREATE_WORKSHOP = ROOT_URL + "mentor/create_workshop.php/";
     public static final String URL_MY_WORKSHOPS=ROOT_URL + "mentor/my_workshops.php";
