@@ -137,6 +137,7 @@ public class Urls {
     public static final String URL_DONATE=ROOT_URL + "patron/donate.php";
     public static final String URL_DONATE_EX_ARTWORKS=ROOT_URL + "patron/donate_exhibition_art.php";
     public static final String URL_DONATION_HISTORY=ROOT_URL + "patron/donation_history.php";
+
     //Exhibition Manager
     public static final String URL_CREATE_EXHIBITION = ROOT_URL + "exhibition_mrg/create_exhibition.php/";
     public static final String URL_UPCOMING_EVENTS=ROOT_URL + "exhibition_mrg/upcoming_events.php";
