@@ -136,7 +136,7 @@ public class EmployerLogin extends AppCompatActivity {
 
                                     session.loginUser_3(employerID,companyName,username,industry,contacts,emailAddress,website,user_type);
                                 }
-                                Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent=new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);

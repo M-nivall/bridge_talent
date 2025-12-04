@@ -68,7 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     private EmployerModel user;
     private SessionHandler session;
     AdapterProducts adapterProducts;
-    //HomeFragment homeFragment;
+    HomeFragment homeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_menu_bar);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
@@ -85,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
 
         session = new SessionHandler(getApplicationContext());
         user = session.getUserDetails_2();
-        //homeFragment = new HomeFragment();
+        homeFragment = new HomeFragment();
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
