@@ -181,6 +181,7 @@ public class StaffLogin extends AppCompatActivity {
                                     String email=jsn.getString("email");
                                     String dateCreated=jsn.getString("dateCreated");
                                     String user_type=jsn.getString("user");
+
                                     session.loginUser_2(clientID,firstname,lastname,username,phoneNo,email,dateCreated,user_type);
                                 }
                                 Intent intent=new Intent(getApplicationContext(), Dashboard.class);

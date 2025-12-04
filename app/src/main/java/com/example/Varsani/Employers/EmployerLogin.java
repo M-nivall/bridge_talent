@@ -125,15 +125,16 @@ public class EmployerLogin extends AppCompatActivity {
                                 JSONArray jsonArray=jsonObject.getJSONArray("details");
                                 for(int i=0;i <jsonArray.length();i++){
                                     JSONObject jsn=jsonArray.getJSONObject(i);
-                                    String clientID=jsn.getString("clientID");
-                                    String firstname=jsn.getString("firstname");
-                                    String lastname=jsn.getString("lastname");
+                                    String employerID=jsn.getString("employerID");
+                                    String companyName=jsn.getString("companyName");
                                     String username=jsn.getString("username");
-                                    String phoneNo=jsn.getString("phoneNo");
-                                    String email=jsn.getString("email");
-                                    String dateCreated=jsn.getString("dateCreated");
+                                    String industry=jsn.getString("industry");
+                                    String contacts=jsn.getString("contacts");
+                                    String emailAddress=jsn.getString("emailAddress");
+                                    String website=jsn.getString("website");
                                     String user_type=jsn.getString("user");
-                                    //session.loginUser(clientID,firstname,lastname,username,phoneNo,email,dateCreated,user_type);
+
+                                    session.loginUser_3(employerID,companyName,username,industry,contacts,emailAddress,website,user_type);
                                 }
                                 Intent intent=new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);

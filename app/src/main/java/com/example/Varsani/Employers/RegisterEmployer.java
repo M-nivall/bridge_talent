@@ -197,7 +197,7 @@ public class RegisterEmployer extends AppCompatActivity {
                             String msg=jsonObject.getString("message");
                             if(status.equals("1")){
                                 Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(getApplicationContext(), Login.class);
+                                Intent intent=new Intent(getApplicationContext(), EmployerLogin.class);
                                 startActivity(intent);
                                 registerBtn.setVisibility(View.VISIBLE);
                                 progressBar.setVisibility(View.GONE);

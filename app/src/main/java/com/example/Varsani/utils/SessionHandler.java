@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.Varsani.Clients.Models.UserModel;
+import com.example.Varsani.Employers.Models.EmployerModel;
 
 import java.util.Date;
 
@@ -28,6 +29,13 @@ public class SessionHandler {
     private static final String KEY_PROFILE_URL = "profileUrl";
 
 
+    private static final String KEY_COMPANY_NAME = "bio";
+    private static final String KEY_INDUSTRY = "bio";
+    private static final String KEY_CONTACTS = "bio";
+    private static final String KEY_EMAIL_ADDRESS = "bio";
+    private static final String KEY_WEBSITE = "bio";
+
+
     private Context mContext;
     private SharedPreferences.Editor mEditor;
     private SharedPreferences mPreferences;
@@ -44,14 +52,14 @@ public class SessionHandler {
      * @param firstname
      * @param username
      */
-    public void loginUser(String clientID,String firstname,String lastname,String username,String phoneno,
+    public void loginUser(String clientID,String firstname,String lastname,String username,String phone_no,
                           String email,String dateCreated,String user_type,String bio,String skills,String education,String profileUrl ) {
 
         mEditor.putString(KEY_CLIENT_ID, clientID);
         mEditor.putString(KEY_FIRST_NAME, firstname);
         mEditor.putString(KEY_LAST_NAME, lastname);
         mEditor.putString(KEY_USER_NAME, username);
-        mEditor.putString(KEY_PHONE_NO, phoneno);
+        mEditor.putString(KEY_PHONE_NO, phone_no);
         mEditor.putString(KEY_EMAIL, email);
         mEditor.putString(KEY_DATE_CREATED, dateCreated);
         mEditor.putString(KEY_USER_TYPE,user_type);
@@ -77,6 +85,26 @@ public class SessionHandler {
         mEditor.putString(KEY_PHONE_NO, phoneno);
         mEditor.putString(KEY_EMAIL, email);
         mEditor.putString(KEY_DATE_CREATED, dateCreated);
+        mEditor.putString(KEY_USER_TYPE,user_type);
+//        mEditor.putString(KEY_PHOTO_URL, photoUrl);
+        Date date = new Date();
+
+        //Set user session for next 7 days
+        long millis = date.getTime() + (7 * 24 * 60 * 60 * 1000);
+        mEditor.putLong(KEY_EXPIRES, millis);
+        mEditor.commit();
+    }
+
+    public void loginUser_3(String employerID,String companyName,String username,String industry,String contacts,
+                            String emailAddress,String website,String user_type) {
+
+        mEditor.putString(KEY_CLIENT_ID, employerID);
+        mEditor.putString(KEY_FIRST_NAME, companyName);
+        mEditor.putString(KEY_LAST_NAME, username);
+        mEditor.putString(KEY_USER_NAME, industry);
+        mEditor.putString(KEY_PHONE_NO, contacts);
+        mEditor.putString(KEY_EMAIL, emailAddress);
+        mEditor.putString(KEY_DATE_CREATED, website);
         mEditor.putString(KEY_USER_TYPE,user_type);
 //        mEditor.putString(KEY_PHOTO_URL, photoUrl);
         Date date = new Date();
@@ -140,23 +168,23 @@ public class SessionHandler {
 
         return user;
     }
-//    public BnfryModel getUserDetails_2() {
-//        //Check if user is logged in first
-//        if (!isLoggedIn()) {
-//            return null;
-//        }
-//        BnfryModel user = new BnfryModel();
-//        user.setUser_type(mPreferences.getString(KEY_USER_TYPE, KEY_EMPTY));
-//        user.setID(mPreferences.getString(KEY_ID, KEY_EMPTY));
-//        user.setFirstname(mPreferences.getString(KEY_FIRST_NAME, KEY_EMPTY));
-//        user.setLastname(mPreferences.getString(KEY_LAST_NAME, KEY_EMPTY));
-//        user.setUsername(mPreferences.getString(KEY_USER_NAME, KEY_EMPTY));
-//        user.setEmail(mPreferences.getString(KEY_EMAIL, KEY_EMPTY));
-//        user.setPhoneNo(mPreferences.getString(KEY_PHONE_NO, KEY_EMPTY));
-//        user.setDateCreated(mPreferences.getString(KEY_DATE_CREATED, KEY_EMPTY));
-//
-//        return user;
-//    }
+    public EmployerModel getUserDetails_2() {
+        //Check if user is logged in first
+        if (!isLoggedIn()) {
+            return null;
+        }
+        EmployerModel user = new EmployerModel();
+        user.setUser_type(mPreferences.getString(KEY_USER_TYPE, KEY_EMPTY));
+        user.setClientID(mPreferences.getString(KEY_CLIENT_ID, KEY_EMPTY));
+        user.setCompanyName(mPreferences.getString(KEY_COMPANY_NAME, KEY_EMPTY));
+        user.setIndustry(mPreferences.getString(KEY_INDUSTRY, KEY_EMPTY));
+        user.setUsername(mPreferences.getString(KEY_USER_NAME, KEY_EMPTY));
+        user.setContacts(mPreferences.getString(KEY_CONTACTS, KEY_EMPTY));
+        user.setEmailAddress(mPreferences.getString(KEY_EMAIL_ADDRESS, KEY_EMPTY));
+        user.setWebsite(mPreferences.getString(KEY_WEBSITE, KEY_EMPTY));
+
+        return user;
+    }
 
 
     /**
