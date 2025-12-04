@@ -263,7 +263,7 @@ public class HomeActivity extends AppCompatActivity {
             navigationView.getMenu().findItem(R.id.nav_staff_login).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_supplier_login).setVisible(false);
 
-            if (user.getUser_type().equals("Applicant")) {
+            if (user.getUser_type().equals("Employer")) {
                 navigationView.getMenu().findItem(R.id.nav_profile).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_feedback).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_logout).setVisible(true);
