@@ -38,7 +38,7 @@ import java.util.Map;
 public class EmployerLogin extends AppCompatActivity {
     private Button btn_login;
     private EditText edt_username,edt_password;
-    TextView signuptext,gotostaff;
+    private TextView gotostaff,txv_register_employer;
     private ProgressBar progressBar;
     private SessionHandler session;
     private UserModel user;
@@ -49,11 +49,11 @@ public class EmployerLogin extends AppCompatActivity {
         setContentView(R.layout.activity_employer_login);
 
         btn_login=findViewById(R.id.login_btn);
-        signuptext=findViewById(R.id.signupText);
         edt_password=findViewById(R.id.edt_password);
         edt_username=findViewById(R.id.edt_username);
         progressBar=findViewById(R.id.progressBar);
         gotostaff = findViewById(R.id.gotostaff);
+        txv_register_employer = findViewById(R.id.txv_register_employer);
 
         session=new SessionHandler(getApplicationContext());
 //        user=session.getUserDetails();
@@ -67,10 +67,10 @@ public class EmployerLogin extends AppCompatActivity {
             }
         });
 
-        signuptext.setOnClickListener(new View.OnClickListener() {
+        txv_register_employer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(), Register.class);
+                Intent intent=new Intent(getApplicationContext(), RegisterEmployer.class);
                 startActivity(intent);
             }
         });
