@@ -35,7 +35,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bridge Talent Company Registration"
+                    android:text="Bridge Talent Employer Registration"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
