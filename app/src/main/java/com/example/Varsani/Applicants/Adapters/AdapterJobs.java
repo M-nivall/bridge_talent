@@ -127,6 +127,9 @@ public class AdapterJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             }catch (RuntimeException e){
 
             }
+            if (!user.getUser_type().equalsIgnoreCase("Applicant")) {
+                view.btn_apply.setVisibility(View.GONE);
+            }
             view.btn_apply.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

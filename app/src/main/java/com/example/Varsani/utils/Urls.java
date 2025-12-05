@@ -4,7 +4,7 @@ public class Urls {
 
 
     public static String ipAddress = "http://192.168.100.71/bridge_talent/";
-    //public static String ipAddress = "https://1b557b947286.ngrok-free.app/bridge_talent/";
+    //public static String ipAddress = "https://1b557b945286.ngrok-free.app/bridge_talent/";
 
     private static final String ROOT_URL =ipAddress+ "android_files/";
     public static final String ROOT_URL_IMAGES =ipAddress+"upload_products/" ;
