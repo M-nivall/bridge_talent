@@ -111,6 +111,11 @@ public class HomeFragment extends Fragment {
             btn_complete_profile.setVisibility(View.VISIBLE);
         }
 
+        if (!user.getUser_type().equalsIgnoreCase("Applicant")) {
+            btn_complete_profile.setVisibility(View.GONE);
+            btn_complete_profile.setVisibility(View.GONE);
+        }
+
         btn_complete_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
