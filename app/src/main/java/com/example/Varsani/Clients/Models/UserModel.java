@@ -107,5 +107,4 @@ public class UserModel {
 
     public void setProfileUrl(String profileUrl) { this.profileUrl = profileUrl;
     }
-
 }
