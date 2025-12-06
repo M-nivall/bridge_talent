@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ import com.example.Varsani.Artists.Models.ExhibitionModal;
 import com.example.Varsani.Clients.About;
 import com.example.Varsani.Clients.CompleteProfile;
 import com.example.Varsani.Clients.Profile;
+import com.example.Varsani.Employers.PostJob;
 import com.example.Varsani.MainActivity;
 import com.example.Varsani.utils.SessionHandler;
 import com.example.Varsani.utils.Urls;
@@ -55,6 +57,7 @@ public class HomeFragment extends Fragment {
     private TextView btn_complete_profile;
     private ImageView icon_home,icon_about,icon_profile;
     private RecyclerView rv_articles ,rv_jobs;
+    private Button btn_post_job;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -67,8 +70,10 @@ public class HomeFragment extends Fragment {
         icon_about= root.findViewById(R.id.icon_about);
         icon_profile = root.findViewById(R.id.icon_profile);
         btn_complete_profile = root.findViewById(R.id.btn_complete_profile);
+        btn_post_job = root.findViewById(R.id.btn_post_job);
 
         btn_complete_profile.setVisibility(View.GONE);
+        btn_post_job.setVisibility(View.GONE);
 
 
 
@@ -113,7 +118,7 @@ public class HomeFragment extends Fragment {
 
         if (!user.getUser_type().equalsIgnoreCase("Applicant")) {
             btn_complete_profile.setVisibility(View.GONE);
-            btn_complete_profile.setVisibility(View.GONE);
+            btn_post_job.setVisibility(View.VISIBLE);
         }
 
         btn_complete_profile.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +126,14 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), CompleteProfile.class);
                 intent.putExtra("role", "surrogate_mother");
+                startActivity(intent);
+            }
+        });
+
+        btn_post_job.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), PostJob.class);
                 startActivity(intent);
             }
         });
