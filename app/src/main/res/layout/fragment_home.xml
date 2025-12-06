@@ -50,6 +50,7 @@
         android:layout_marginTop="8dp"
         android:visibility="visible" />
 
+
     <!-- Section Title: Articles -->
     <TextView
         android:id="@+id/tv_articles"
@@ -73,6 +74,21 @@
         android:overScrollMode="never"
         android:padding="4dp"
         tools:listitem="@layout/item_article" />
+
+    <!-- Post Job Button (Employer) -->
+    <Button
+        android:id="@+id/btn_post_job"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Post Job"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:layout_below="@id/rv_articles"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_post_job_bg"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"/>
 
     <!-- Section Title: Available Jobs -->
     <TextView
