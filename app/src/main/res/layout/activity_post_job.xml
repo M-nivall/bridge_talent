@@ -206,6 +206,14 @@
             android:textColorHint="#777"
             android:layout_marginTop="12dp" />
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"/>
+
         <!-- SUBMIT BUTTON -->
         <Button
             android:id="@+id/btn_submit_job"
