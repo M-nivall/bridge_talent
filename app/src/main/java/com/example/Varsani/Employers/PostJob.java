@@ -95,97 +95,72 @@ public class PostJob extends AppCompatActivity {
         final String qualifications = et_qualifications.getText().toString().trim();
 
 
-        if(TextUtils.isEmpty(company_name)){
-            Toast.makeText(getApplicationContext(), "Enter company name", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+        if(TextUtils.isEmpty(job_title)){
+            Toast.makeText(getApplicationContext(), "Enter Job Title", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
 
         }
-        if(TextUtils.isEmpty(industry)){
-            Toast.makeText(getApplicationContext(), "Enter industry", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+        if(TextUtils.isEmpty(job_category)){
+            Toast.makeText(getApplicationContext(), "Enter job category", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
 
         }
-        if(TextUtils.isEmpty(location)){
-            Toast.makeText(getApplicationContext(), "Enter location", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+        if(TextUtils.isEmpty(employer_type)){
+            Toast.makeText(getApplicationContext(), "Enter employer type", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
 
         }
-        if(TextUtils.isEmpty(website)){
-            Toast.makeText(getApplicationContext(), "Enter website", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
-            return;
-
-        }
-
-        if(TextUtils.isEmpty(company_description)){
-            Toast.makeText(getApplicationContext(), "Enter company description", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+        if(TextUtils.isEmpty(entry_level)){
+            Toast.makeText(getApplicationContext(), "Enter entry level", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
 
         }
 
-        if(TextUtils.isEmpty(username)){
-            Toast.makeText(getApplicationContext(), "Enter username", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+        if(TextUtils.isEmpty(salary_range)){
+            Toast.makeText(getApplicationContext(), "Enter salary range", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
 
         }
-        if(TextUtils.isEmpty(phoneNo)){
-            Toast.makeText(getApplicationContext(), "Enter phone number", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+
+        if(TextUtils.isEmpty(deadline)){
+            Toast.makeText(getApplicationContext(), "Select deadline", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
 
         }
-        if(phoneNo.length()>10 ||phoneNo.length()<10){
-            Toast.makeText(getApplicationContext(), "Phone number should contain 10 digits", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
-
-            return;
-        }
-
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(getApplicationContext(), "Enter email address", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+        if(TextUtils.isEmpty(job_description)){
+            Toast.makeText(getApplicationContext(), "Enter job escription", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
 
         }
-        if (!email.matches(emailPattern)){
-            Toast.makeText(getApplicationContext(), "Invalid email address", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+
+        if(TextUtils.isEmpty(job_responsibilities)){
+            Toast.makeText(getApplicationContext(), "Fill job responsibilities", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
+
         }
-        if(TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Password is required", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
+        if(TextUtils.isEmpty(qualifications)) {
+            Toast.makeText(getApplicationContext(), "Enter qualifications", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
         }
 
-        if(!password.equals(password_c)) {
-            Toast.makeText(getApplicationContext(), "Password mismatch", Toast.LENGTH_SHORT).show();
-            registerBtn.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
-            return;
-        }
-        //if(!role.equals(role)) {
-        //    Toast.makeText(getApplicationContext(), "Select role", Toast.LENGTH_SHORT).show();
-        //    registerBtn.setVisibility(View.VISIBLE);
-        //    progressBar.setVisibility(View.GONE);
-        //    return;
-        // }
         StringRequest stringRequest=new StringRequest(Request.Method.POST, Urls.URL_REGISTER_COMPANY,
                 new Response.Listener<String>() {
                     @Override
@@ -199,18 +174,18 @@ public class PostJob extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(getApplicationContext(), EmployerLogin.class);
                                 startActivity(intent);
-                                registerBtn.setVisibility(View.VISIBLE);
+                                btn_submit_job.setVisibility(View.VISIBLE);
                                 progressBar.setVisibility(View.GONE);
                             }else{
                                 Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
 
-                                registerBtn.setVisibility(View.VISIBLE);
+                                btn_submit_job.setVisibility(View.VISIBLE);
                                 progressBar.setVisibility(View.GONE);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
                             Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
-                            registerBtn.setVisibility(View.VISIBLE);
+                            btn_submit_job.setVisibility(View.VISIBLE);
                             progressBar.setVisibility(View.GONE);
                         }
                     }
@@ -220,7 +195,7 @@ public class PostJob extends AppCompatActivity {
                 error.printStackTrace();
                 error.printStackTrace();
                 Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
-                registerBtn.setVisibility(View.VISIBLE);
+                btn_submit_job.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
             }
         })
@@ -228,15 +203,15 @@ public class PostJob extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("company_name",company_name);
-                params.put("industry",industry);
-                params.put("location",location);
-                params.put("website",website);
-                params.put("company_description",company_description);
-                params.put("username",username);
-                params.put("phoneNo",phoneNo);
-                params.put("email",email);
-                params.put("password",password);
+                params.put("job_title",job_title);
+                params.put("job_category",job_category);
+                params.put("employer_type",employer_type);
+                params.put("entry_level",entry_level);
+                params.put("salary_range",salary_range);
+                params.put("deadline",deadline);
+                params.put("job_description",job_description);
+                params.put("job_responsibilities",job_responsibilities);
+                params.put("qualifications",qualifications);
                 return params;
             }
         };
