@@ -75,5 +75,4 @@ public class EmployerModel {
         this.website = website;
     }
 
-
 }
