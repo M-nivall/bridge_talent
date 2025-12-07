@@ -64,6 +64,7 @@ public class UserModel {
     public String getDateCreated() {
         return dateCreated;
     }
+
     public void setDateCreated(String dateCreated) {
         this.dateCreated = dateCreated;
     }
