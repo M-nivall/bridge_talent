@@ -44,7 +44,7 @@ import java.util.Map;
 
 public class PostJob extends AppCompatActivity {
     private TextView tv_company_name, txv_industry, txv_website;
-    private EditText et_job_title, et_job_category, et_employer_type, et_entry_level,
+    private EditText et_job_title, et_job_category, et_employer_type, et_entry_level,et_job_location,
             et_salary_range, et_deadline, et_description, et_responsibilities, et_qualifications;
     private Button btn_submit_job;
     private ProgressBar progressBar;
@@ -72,6 +72,7 @@ public class PostJob extends AppCompatActivity {
         et_employer_type = findViewById(R.id.et_employer_type);
         et_entry_level = findViewById(R.id.et_entry_level);
         et_salary_range = findViewById(R.id.et_salary_range);
+        et_job_location = findViewById(R.id.et_job_location);
         et_deadline = findViewById(R.id.et_deadline);
         et_description = findViewById(R.id.et_description);
         et_responsibilities = findViewById(R.id.et_responsibilities);
@@ -145,6 +146,7 @@ public class PostJob extends AppCompatActivity {
         final String employer_type = et_employer_type.getText().toString().trim();
         final String entry_level = et_entry_level.getText().toString().trim();
         final String salary_range = et_salary_range.getText().toString().trim();
+        final String job_location = et_job_location.getText().toString().trim();
         final String deadline = et_deadline.getText().toString().trim();
         final String job_description = et_description.getText().toString().trim();
         final String job_responsibilities = et_responsibilities.getText().toString().trim();
@@ -196,7 +198,15 @@ public class PostJob extends AppCompatActivity {
 
         }
         if(TextUtils.isEmpty(job_description)){
-            Toast.makeText(getApplicationContext(), "Enter job escription", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Enter job description", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+            return;
+
+        }
+
+        if(TextUtils.isEmpty(job_location)){
+            Toast.makeText(getApplicationContext(), "Enter job location", Toast.LENGTH_SHORT).show();
             btn_submit_job.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             return;
@@ -217,7 +227,7 @@ public class PostJob extends AppCompatActivity {
             return;
         }
 
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, Urls.URL_REGISTER_COMPANY,
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, Urls.URL_POST_JOB,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -264,6 +274,7 @@ public class PostJob extends AppCompatActivity {
                 params.put("employer_type",employer_type);
                 params.put("entry_level",entry_level);
                 params.put("salary_range",salary_range);
+                params.put("job_location",job_location);
                 params.put("deadline",deadline);
                 params.put("job_description",job_description);
                 params.put("job_responsibilities",job_responsibilities);
