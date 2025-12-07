@@ -44,6 +44,7 @@ public class Urls {
     //Employer
     public static final String URL_REGISTER_COMPANY = ROOT_URL +"employer/register_employer.php";
     public static final String URL_EMPLOYER_LOGIN= ROOT_URL+"employer/employer_login.php";
+    public static final String URL_POST_JOB = ROOT_URL +"employer/register_employer.php";
     // user
     public static final String URL_REG = ROOT_URL +"applicants/register.php";
     public static final String URL_LOGIN= ROOT_URL+"applicants/login.php";

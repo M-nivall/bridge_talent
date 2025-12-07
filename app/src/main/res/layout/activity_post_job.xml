@@ -127,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input_bg"
-            android:hint="Employer Type"
+            android:hint="Employment Type"
             android:padding="14dp"
             android:textColor="#000"
             android:textColorHint="#777"

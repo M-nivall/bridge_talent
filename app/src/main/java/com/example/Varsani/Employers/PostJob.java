@@ -1,6 +1,8 @@
 package com.example.Varsani.Employers;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -25,11 +28,17 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.Varsani.Clients.CheckOut2;
+import com.example.Varsani.Clients.Models.UserModel;
+import com.example.Varsani.Employers.Models.EmployerModel;
 import com.example.Varsani.R;
+import com.example.Varsani.utils.SessionHandler;
 import com.example.Varsani.utils.Urls;
 
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,14 +49,22 @@ public class PostJob extends AppCompatActivity {
     private Button btn_submit_job;
     private ProgressBar progressBar;
 
+    private SessionHandler session;
+    private EmployerModel user;
+
+    private Calendar calendar;
+    private SimpleDateFormat dateFormat;
+    private String date;
+
+    DatePickerDialog datePicker;
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_job);
 
         tv_company_name = findViewById(R.id.tv_company_name);
-        txv_industry = findViewById(R.id.txv_industry);
-
         txv_industry = findViewById(R.id.txv_industry);
         txv_website = findViewById(R.id.txv_website);
         et_job_title = findViewById(R.id.et_job_title);
@@ -63,6 +80,45 @@ public class PostJob extends AppCompatActivity {
         progressBar=findViewById(R.id.progress_bar);
 
         progressBar.setVisibility(View.GONE);
+
+        session=new SessionHandler(getApplicationContext());
+        user=session.getUserDetails_2();
+
+
+        calendar = Calendar.getInstance();
+        dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        date = dateFormat.format(calendar.getTime());
+        et_deadline.setText(date);
+
+        final Calendar calendar2 = Calendar.getInstance();
+        final int day = calendar2.get(Calendar.DAY_OF_MONTH);
+        final int year = calendar2.get(Calendar.YEAR);
+        final int month = calendar2.get(Calendar.MONTH);
+
+        datePicker = new DatePickerDialog(PostJob.this);
+
+        tv_company_name.setText("Company Name: " + user.getCompanyName());
+        txv_industry.setText("Industry: " + user.getIndustry());
+        txv_website.setText("Website: " + user.getWebsite());
+
+        et_deadline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePicker = new DatePickerDialog(PostJob.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
+                        // adding the selected date in the edittext
+                        et_deadline.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                    }
+                }, year, month, day);
+
+                // set maximum date to be selected as today
+                datePicker.getDatePicker().setMinDate(calendar.getTimeInMillis());
+
+                // show the dialog
+                datePicker.show();
+            }
+        });
 
         btn_submit_job.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -212,6 +268,7 @@ public class PostJob extends AppCompatActivity {
                 params.put("job_description",job_description);
                 params.put("job_responsibilities",job_responsibilities);
                 params.put("qualifications",qualifications);
+                params.put("employerID",user.getClientID());
                 return params;
             }
         };
