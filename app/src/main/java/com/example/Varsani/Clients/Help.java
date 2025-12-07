@@ -14,4 +14,5 @@ public class Help extends AppCompatActivity {
         setContentView(R.layout.activity_help);
 
     }
+
 }
