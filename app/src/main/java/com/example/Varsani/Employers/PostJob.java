@@ -53,6 +53,9 @@ public class PostJob extends AppCompatActivity {
     private SessionHandler session;
     private EmployerModel user;
 
+    final String job_fee = "3500"; // job posting fee in Ksh
+
+
     private Calendar calendar;
     private SimpleDateFormat dateFormat;
     private String date;
@@ -91,7 +94,7 @@ public class PostJob extends AppCompatActivity {
         calendar = Calendar.getInstance();
         dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         date = dateFormat.format(calendar.getTime());
-        et_deadline.setText(date);
+        et_deadline.setText("Set Deadline");
 
         final Calendar calendar2 = Calendar.getInstance();
         final int day = calendar2.get(Calendar.DAY_OF_MONTH);
@@ -304,6 +307,7 @@ public class PostJob extends AppCompatActivity {
                 params.put("qualifications",qualifications);
                 params.put("payment_code",payment_code);
                 params.put("employerID",user.getClientID());
+                params.put("job_fee", job_fee);
                 return params;
             }
         };

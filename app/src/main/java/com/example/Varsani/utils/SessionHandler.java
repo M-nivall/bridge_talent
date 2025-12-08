@@ -29,11 +29,11 @@ public class SessionHandler {
     private static final String KEY_PROFILE_URL = "profileUrl";
 
 
-    private static final String KEY_COMPANY_NAME = "bio";
-    private static final String KEY_INDUSTRY = "bio";
-    private static final String KEY_CONTACTS = "bio";
-    private static final String KEY_EMAIL_ADDRESS = "bio";
-    private static final String KEY_WEBSITE = "bio";
+    private static final String KEY_COMPANY_NAME = "companyName";
+    private static final String KEY_INDUSTRY = "industry";
+    private static final String KEY_CONTACTS = "contacts";
+    private static final String KEY_EMAIL_ADDRESS = "emailAddress";
+    private static final String KEY_WEBSITE = "website";
 
 
     private Context mContext;
@@ -99,12 +99,12 @@ public class SessionHandler {
                             String emailAddress,String website,String user_type) {
 
         mEditor.putString(KEY_CLIENT_ID, employerID);
-        mEditor.putString(KEY_FIRST_NAME, companyName);
+        mEditor.putString(KEY_COMPANY_NAME, companyName);
         mEditor.putString(KEY_LAST_NAME, username);
-        mEditor.putString(KEY_USER_NAME, industry);
-        mEditor.putString(KEY_PHONE_NO, contacts);
-        mEditor.putString(KEY_EMAIL, emailAddress);
-        mEditor.putString(KEY_DATE_CREATED, website);
+        mEditor.putString(KEY_INDUSTRY, industry);
+        mEditor.putString(KEY_CONTACTS, contacts);
+        mEditor.putString(KEY_EMAIL_ADDRESS, emailAddress);
+        mEditor.putString(KEY_WEBSITE, website);
         mEditor.putString(KEY_USER_TYPE,user_type);
 //        mEditor.putString(KEY_PHOTO_URL, photoUrl);
         Date date = new Date();
