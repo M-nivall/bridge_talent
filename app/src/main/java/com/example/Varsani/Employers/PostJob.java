@@ -68,6 +68,9 @@ public class PostJob extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_job);
 
+        getSupportActionBar().setSubtitle("Job Applications");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         tv_company_name = findViewById(R.id.tv_company_name);
         txv_industry = findViewById(R.id.txv_industry);
         txv_website = findViewById(R.id.txv_website);
@@ -129,9 +132,22 @@ public class PostJob extends AppCompatActivity {
         btn_submit_job.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                postJob();
+                // Show confirmation dialog
+                new androidx.appcompat.app.AlertDialog.Builder(PostJob.this)
+                        .setTitle("Confirm Submission")
+                        .setMessage("Are you sure you want to submit this job?")
+                        .setPositiveButton("Yes", (dialog, which) -> {
+                // User clicked Yes, proceed to post job
+                            postJob();
+                        })
+                        .setNegativeButton("No", (dialog, which) -> {
+                // User clicked No, dismiss dialog
+                            dialog.dismiss();
+                        })
+                        .show();
             }
         });
+
     }
 
     @Override
@@ -264,8 +280,6 @@ public class PostJob extends AppCompatActivity {
                             String msg=jsonObject.getString("message");
                             if(status.equals("1")){
                                 Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
-                                Intent intent=new Intent(getApplicationContext(), EmployerLogin.class);
-                                startActivity(intent);
                                 btn_submit_job.setVisibility(View.VISIBLE);
                                 progressBar.setVisibility(View.GONE);
                             }else{

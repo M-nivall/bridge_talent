@@ -107,7 +107,7 @@ public class StaffLogin extends AppCompatActivity {
     public void select(View v) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
         builder.setTitle("Select");
-        final String[] array = {"Exhibition Manager","Finance","Mentor"};
+        final String[] array = {"Finance Manager","Editorial Manager","Verification Officer"};
 
         builder.setSingleChoiceItems(array, -1, new DialogInterface.OnClickListener() {
             @Override
