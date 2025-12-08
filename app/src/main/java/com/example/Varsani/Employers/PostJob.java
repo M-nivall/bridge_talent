@@ -45,7 +45,8 @@ import java.util.Map;
 public class PostJob extends AppCompatActivity {
     private TextView tv_company_name, txv_industry, txv_website;
     private EditText et_job_title, et_job_category, et_employer_type, et_entry_level,et_job_location,
-            et_salary_range, et_deadline, et_description, et_responsibilities, et_qualifications;
+            et_salary_range, et_deadline, et_description, et_responsibilities, et_qualifications,
+            et_payment_code;
     private Button btn_submit_job;
     private ProgressBar progressBar;
 
@@ -77,6 +78,7 @@ public class PostJob extends AppCompatActivity {
         et_description = findViewById(R.id.et_description);
         et_responsibilities = findViewById(R.id.et_responsibilities);
         et_qualifications = findViewById(R.id.et_qualifications);
+        et_payment_code = findViewById(R.id.et_payment_code);
         btn_submit_job = findViewById(R.id.btn_submit_job);
         progressBar=findViewById(R.id.progress_bar);
 
@@ -151,6 +153,7 @@ public class PostJob extends AppCompatActivity {
         final String job_description = et_description.getText().toString().trim();
         final String job_responsibilities = et_responsibilities.getText().toString().trim();
         final String qualifications = et_qualifications.getText().toString().trim();
+        final String payment_code = et_payment_code.getText().toString().trim();
 
 
         if(TextUtils.isEmpty(job_title)){
@@ -227,6 +230,26 @@ public class PostJob extends AppCompatActivity {
             return;
         }
 
+        if(TextUtils.isEmpty(payment_code)) {
+            Toast.makeText(getApplicationContext(), "Enter payment_code", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+        if(payment_code.length()>10 ||payment_code.length()<10){
+            Toast.makeText(getApplicationContext(), "Payment code  should contain 10 digits", Toast.LENGTH_SHORT).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+        if(!payment_code.matches("^(?=.*[A-Z])(?=.*[0-9])[A-Z0-9]+$")){
+            Toast.makeText(getApplicationContext(), "Payment code should have  characters and digit",
+                    Toast.LENGTH_LONG).show();
+            btn_submit_job.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+            return;
+        }
+
         StringRequest stringRequest=new StringRequest(Request.Method.POST, Urls.URL_POST_JOB,
                 new Response.Listener<String>() {
                     @Override
@@ -279,6 +302,7 @@ public class PostJob extends AppCompatActivity {
                 params.put("job_description",job_description);
                 params.put("job_responsibilities",job_responsibilities);
                 params.put("qualifications",qualifications);
+                params.put("payment_code",payment_code);
                 params.put("employerID",user.getClientID());
                 return params;
             }

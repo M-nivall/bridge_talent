@@ -239,6 +239,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
                 android:orientation="vertical">
 
                 <!-- PAYMENT AMOUNT -->
@@ -249,13 +250,14 @@
                     android:textStyle="bold"
                     android:textSize="17sp"
                     android:textColor="#0A57BF"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 
                 <!-- PAYMENT INSTRUCTIONS -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pay via MPESA Till Number 123456.\nAfter payment, enter the MPESA confirmation code below."
+                    android:text="Pay via MPESA Till Number 222454.\nAfter payment, enter the MPESA confirmation code below."
                     android:textSize="14sp"
                     android:textColor="#555"
                     android:layout_marginBottom="16dp" />
@@ -266,6 +268,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/input_bg"
+                    android:inputType="textCapCharacters"
                     android:hint="Enter MPESA Confirmation Code"
                     android:padding="14dp"
                     android:textColor="#000"
