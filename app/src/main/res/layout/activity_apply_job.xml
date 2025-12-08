@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <!-- Job Details Card -->
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -71,7 +71,7 @@
                     android:layout_marginTop="10dp" />
 
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
 
 
         <!-- Expected Salary -->
@@ -84,7 +84,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_expected_salary"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,7 +99,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_notice_period"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
