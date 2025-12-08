@@ -12,7 +12,6 @@ public class FeedbackModel {
         this.sender=sender;
         this.reply=reply;
     }
-
     public String getComment() {
         return comment;
     }
@@ -22,7 +21,6 @@ public class FeedbackModel {
     public String getSender(){
         return sender;
     }
-
     public String getReply() {
         return reply;
     }
