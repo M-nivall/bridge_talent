@@ -275,7 +275,7 @@ public class Dashboard extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_artwork_inventory).setVisible(false);
 
         if (session.isLoggedIn()) {
-            if (user.getUser_type().equals("Finance")) {
+            if (user.getUser_type().equals("Finance Manager")) {
                 navigationView.getMenu().findItem(R.id.nav_new_donations).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_received_donations).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_dispatched_donations).setVisible(true);
