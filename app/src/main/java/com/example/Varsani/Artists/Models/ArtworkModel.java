@@ -44,5 +44,4 @@ public class ArtworkModel {
     public String getUsername() {
         return username;
     }
-
 }
