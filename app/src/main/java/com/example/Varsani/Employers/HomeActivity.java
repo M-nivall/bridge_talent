@@ -147,6 +147,9 @@ public class HomeActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_applied_jobs) {
                     Intent nae = new Intent(getApplicationContext(), AppliedJobs.class);
                     startActivity(nae);
+                } else if (id == R.id.nav_my_jobs) {
+                    Intent nae = new Intent(getApplicationContext(), MyJobs.class);
+                    startActivity(nae);
                 } else if (id == R.id.nav_request) {
                     Intent nr = new Intent(getApplicationContext(), MyRequests.class);
                     startActivity(nr);
