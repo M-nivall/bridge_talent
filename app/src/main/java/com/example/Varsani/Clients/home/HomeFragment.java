@@ -112,14 +112,17 @@ public class HomeFragment extends Fragment {
         list= new ArrayList<>();
         list2= new ArrayList<>();
 
-        if (user.getSkills().equalsIgnoreCase("NULL") || user.getSkills().isEmpty()) {
-            btn_complete_profile.setVisibility(View.VISIBLE);
+        if (session.isLoggedIn()) {
+            if (user.getSkills().equalsIgnoreCase("NULL") || user.getSkills().isEmpty() && user.getUser_type().equalsIgnoreCase("Applicant")) {
+                btn_complete_profile.setVisibility(View.VISIBLE);
+            }
+
+            if (!user.getUser_type().equalsIgnoreCase("Applicant")) {
+                btn_complete_profile.setVisibility(View.GONE);
+                btn_post_job.setVisibility(View.VISIBLE);
+            }
         }
 
-        if (!user.getUser_type().equalsIgnoreCase("Applicant")) {
-            btn_complete_profile.setVisibility(View.GONE);
-            btn_post_job.setVisibility(View.VISIBLE);
-        }
 
         btn_complete_profile.setOnClickListener(new View.OnClickListener() {
             @Override

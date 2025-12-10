@@ -48,6 +48,7 @@ public class Orders_hist extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders_hist);
+
         getSupportActionBar().setSubtitle("My orders");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

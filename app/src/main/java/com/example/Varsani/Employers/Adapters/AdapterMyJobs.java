@@ -47,7 +47,7 @@ public class AdapterMyJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
 
         public TextView txv_jobTitle,txv_jobCategory, txv_jobType,txv_datePosted,txv_status;
-        public Button btn_view_details;
+        public Button btn_job_details;
 
 
         public OriginalViewHolder(View v) {
@@ -58,7 +58,7 @@ public class AdapterMyJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             txv_jobTitle =v.findViewById(R.id.txv_jobTitle);
             txv_jobType = v.findViewById(R.id.txv_jobType);
             txv_datePosted = v.findViewById(R.id.txv_datePosted);
-            btn_view_details = v.findViewById(R.id.btn_view_details);
+            btn_job_details = v.findViewById(R.id.btn_job_details);
 
         }
     }
@@ -86,7 +86,7 @@ public class AdapterMyJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             view.txv_status.setText("Status: " + o.getJobStatus() );
 
 
-            view.btn_view_details.setOnClickListener(new View.OnClickListener() {
+            view.btn_job_details.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 

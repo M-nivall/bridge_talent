@@ -61,10 +61,6 @@ public class MyJobs extends AppCompatActivity {
         getSupportActionBar().setSubtitle("Job Applications");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        getSupportActionBar().setTitle("Applied Exhibitions");
         recyclerView=findViewById(R.id.recyclerView);
         progressBar=findViewById(R.id.progressBar);
 
