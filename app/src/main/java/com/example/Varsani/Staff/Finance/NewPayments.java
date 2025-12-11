@@ -1,6 +1,7 @@
 package com.example.Varsani.Staff.Finance;
 
 import static com.example.Varsani.utils.Urls.URL_MY_JOBS;
+import static com.example.Varsani.utils.Urls.URL_NEW_PAYMENTS;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -79,7 +80,7 @@ public class NewPayments extends AppCompatActivity {
     }
 
     public void getApplicants(){
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_MY_JOBS,
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_NEW_PAYMENTS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

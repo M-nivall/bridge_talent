@@ -84,6 +84,8 @@ public class Urls {
     public static final String URL_SUPPLY_PAYMENTS2=ROOT_URL + "finance/supply_payments2.php";
     public static final String URL_PAY_SUPPLIER=ROOT_URL + "finance/pay_supplier.php";
 
+    public static final String URL_NEW_PAYMENTS=ROOT_URL + "finance/new_payments.php";
+
     //shipping mrg
     public static final String URL_ORDERS_TO_SHIP=ROOT_URL + "ship_mrg/orders_to_ship.php";
     public static final String URL_GET_DRIVERS=ROOT_URL + "ship_mrg/get_drivers.php";
