@@ -31,6 +31,7 @@ import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.Employers.Adapters.AdapterMyJobs;
 import com.example.Varsani.Employers.Models.MyJobsModel;
 import com.example.Varsani.R;
+import com.example.Varsani.Staff.Finance.Models.PaymentModel;
 import com.example.Varsani.utils.SessionHandler;
 
 import org.json.JSONArray;
@@ -42,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 public class NewPayments extends AppCompatActivity {
-    private List<MyJobsModel> list;
+    private List<PaymentModel> list;
     private AdapterMyJobs adapterMyJobs;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
@@ -95,7 +96,7 @@ public class NewPayments extends AppCompatActivity {
                                 for(int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsn = jsonArray.getJSONObject(i);
 
-                                    MyJobsModel myJobsModel = new MyJobsModel(
+                                    PaymentModel paymentModel = new PaymentModel(
                                             jsn.getString("job_id"),
                                             jsn.getString("title"),
                                             jsn.getString("job_category"),
@@ -108,10 +109,16 @@ public class NewPayments extends AppCompatActivity {
                                             jsn.getString("salary_range"),
                                             jsn.getString("date_posted"),
                                             jsn.getString("deadline"),
-                                            jsn.getString("job_status")
+                                            jsn.getString("job_status"),
+
+                                            jsn.getString("company_name"),
+                                            jsn.getString("contacts"),
+                                            jsn.getString("amount"),
+                                            jsn.getString("payment_method"),
+                                            jsn.getString("transaction_code")
                                     );
 
-                                    list.add(myJobsModel);
+                                    list.add(paymentModel);
                                 }
 
                                 adapterMyJobs=new AdapterMyJobs(getApplicationContext(),list);
