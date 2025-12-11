@@ -12,6 +12,9 @@
             android:id="@+id/nav_new_donations"
             android:title="New Donations" />
         <item
+            android:id="@+id/nav_payments"
+            android:title="New Payments" />
+        <item
             android:id="@+id/nav_received_donations"
             android:title="Received Donations" />
         <item

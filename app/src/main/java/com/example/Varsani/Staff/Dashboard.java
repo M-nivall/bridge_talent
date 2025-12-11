@@ -31,6 +31,7 @@ import com.example.Varsani.Staff.Finance.ApprovedOrders;
 import com.example.Varsani.Staff.Finance.ApprovedServPayments;
 import com.example.Varsani.Staff.Finance.DispatchedDonations;
 import com.example.Varsani.Staff.Finance.NewDonations;
+import com.example.Varsani.Staff.Finance.NewPayments;
 import com.example.Varsani.Staff.Finance.NewServicePayments;
 import com.example.Varsani.Staff.Finance.ReceivedDonations;
 import com.example.Varsani.Staff.Finance.SupplyPayments;
@@ -87,6 +88,9 @@ public class Dashboard extends AppCompatActivity {
                     startActivity(hm);
                 } else if (id == R.id.nav_new_donations) {
                     Intent n = new Intent(getApplicationContext(), NewDonations.class);
+                    startActivity(n);
+                } else if (id == R.id.nav_payments) {
+                    Intent n = new Intent(getApplicationContext(), NewPayments.class);
                     startActivity(n);
                 } else if (id == R.id.nav_received_donations) {
                     Intent nrd = new Intent(getApplicationContext(), ReceivedDonations.class);
