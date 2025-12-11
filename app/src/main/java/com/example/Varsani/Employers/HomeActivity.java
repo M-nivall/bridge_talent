@@ -258,6 +258,8 @@ public class HomeActivity extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_donation_history).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(false);
 
+        navigationView.getMenu().findItem(R.id.nav_my_jobs).setVisible(false);
+
         if (session.isLoggedIn()) {
             navigationView.getMenu().findItem(R.id.nav_register).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_login).setVisible(false);
@@ -275,7 +277,8 @@ public class HomeActivity extends AppCompatActivity {
                 navigationView.getMenu().findItem(R.id.nav_my_donation).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_workshops).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_my_donation_history).setVisible(true);
-                navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(true);
+                //navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(true);
+                navigationView.getMenu().findItem(R.id.nav_my_jobs).setVisible(true);
             }
 
             if (user.getUser_type().equals("Student")) {

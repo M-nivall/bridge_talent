@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_workshops) {
                     Intent nws = new Intent(getApplicationContext(), Workshops.class);
                     startActivity(nws);
-                } else if (id == R.id.nav_artwork) {
+                }  else if (id == R.id.nav_artwork) {
                     Intent naw = new Intent(getApplicationContext(), MyArtWork.class);
                     startActivity(naw);
                 } else if (id == R.id.nav_my_donation) {
@@ -246,6 +246,8 @@ public class MainActivity extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_my_donation_history).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_donation_history).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(false);
+
+        navigationView.getMenu().findItem(R.id.nav_my_jobs).setVisible(false);
 
         if (session.isLoggedIn()) {
             navigationView.getMenu().findItem(R.id.nav_register).setVisible(false);
