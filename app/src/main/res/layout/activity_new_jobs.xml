@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Staff.Finance.ApprovedPayments">
+    tools:context=".Staff.VerificationOfficer.NewJobs">
 
     <ProgressBar
         android:visibility="gone"

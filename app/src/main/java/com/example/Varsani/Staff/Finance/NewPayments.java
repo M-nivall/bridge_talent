@@ -71,7 +71,7 @@ public class NewPayments extends AppCompatActivity {
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        getApplicants();
+        getPayments();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -81,7 +81,7 @@ public class NewPayments extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void getApplicants(){
+    public void getPayments() {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_NEW_PAYMENTS,
                 new Response.Listener<String>() {
                     @Override

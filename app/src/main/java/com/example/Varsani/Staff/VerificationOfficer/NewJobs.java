@@ -1,6 +1,6 @@
-package com.example.Varsani.Staff.Finance;
+package com.example.Varsani.Staff.VerificationOfficer;
 
-import static com.example.Varsani.utils.Urls.URL_APPROVED_PAYMENTS;
+import static com.example.Varsani.utils.Urls.URL_NEW_JOBS;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -40,7 +40,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ApprovedPayments extends AppCompatActivity {
+public class NewJobs extends AppCompatActivity {
     private List<PaymentModel> list;
     private AdapterPayment adapterPayment;
     private ProgressBar progressBar;
@@ -52,9 +52,9 @@ public class ApprovedPayments extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_approved_payments);
+        setContentView(R.layout.activity_new_jobs);
 
-        getSupportActionBar().setSubtitle("Approved Payments");
+        getSupportActionBar().setSubtitle("New Jobs");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView=findViewById(R.id.recyclerView);
@@ -68,9 +68,8 @@ public class ApprovedPayments extends AppCompatActivity {
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
         recyclerView.setLayoutManager(mLayoutManager);
 
-        payments();
+        getPayments();
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -79,8 +78,8 @@ public class ApprovedPayments extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void payments() {
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_APPROVED_PAYMENTS,
+    public void getPayments() {
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_NEW_JOBS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

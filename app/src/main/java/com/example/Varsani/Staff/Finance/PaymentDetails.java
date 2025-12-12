@@ -123,6 +123,10 @@ public class PaymentDetails extends AppCompatActivity {
         tvPaymentCode.setText(transactionCode);
         tvPaymentStatus.setText(paymentStatus);
 
+        if (paymentStatus.equalsIgnoreCase("Approved")) {
+            btnApprovePayment.setVisibility(View.GONE);
+        }
+
         btnApprovePayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,7 +198,7 @@ public class PaymentDetails extends AppCompatActivity {
 
     public void alertApprove(){
         android.app.AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setMessage("Confirm Payment");
+        alertDialog.setMessage("Approve Payment");
         alertDialog.setCancelable(false);
         alertDialog.setButton2("Close", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
