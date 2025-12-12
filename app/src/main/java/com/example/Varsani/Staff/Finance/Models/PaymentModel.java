@@ -19,13 +19,14 @@ public class PaymentModel {
     private String amount;
     private String paymentMethod;
     private String transactionCode;
+    private String paymentStatus;
 
     public PaymentModel
             (String jobID, String title, String jobCategory, String jobLevel,
                        String description, String qualifications, String jobResponsibilities,
                        String location, String jobType, String salaryRange,
                        String datePosted, String deadline, String jobStatus, String companyName,
-             String contacts, String amount, String paymentMethod, String transactionCode) {
+             String contacts, String amount, String paymentMethod, String transactionCode, String paymentStatus) {
 
         this.jobID = jobID;
         this.title = title;
@@ -45,6 +46,7 @@ public class PaymentModel {
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.transactionCode = transactionCode;
+        this.paymentStatus = paymentStatus;
     }
 
     public String getJobID() { return jobID; }
@@ -65,4 +67,5 @@ public class PaymentModel {
     public String getAmount() { return amount; }
     public String getPaymentMethod() { return paymentMethod; }
     public String getTransactionCode() { return transactionCode; }
+    public String getPaymentStatus() { return paymentStatus; }
 }
