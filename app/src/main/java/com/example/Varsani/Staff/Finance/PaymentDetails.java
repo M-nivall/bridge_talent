@@ -119,7 +119,7 @@ public class PaymentDetails extends AppCompatActivity {
         tvDeadline.setText(deadline);
         tvStatus.setText(jobStatus);
 
-        tvAmount.setText(amount);
+        tvAmount.setText("Ksh " + amount);
         tvPaymentCode.setText(transactionCode);
         tvPaymentStatus.setText(paymentStatus);
 

@@ -28,6 +28,7 @@ import com.example.Varsani.Staff.ExhibitionManager.Inventory;
 import com.example.Varsani.Staff.ExhibitionManager.PendingArtworks;
 import com.example.Varsani.Staff.ExhibitionManager.UpcomingExhibitions;
 import com.example.Varsani.Staff.Finance.ApprovedOrders;
+import com.example.Varsani.Staff.Finance.ApprovedPayments;
 import com.example.Varsani.Staff.Finance.ApprovedServPayments;
 import com.example.Varsani.Staff.Finance.DispatchedDonations;
 import com.example.Varsani.Staff.Finance.NewDonations;
@@ -90,8 +91,11 @@ public class Dashboard extends AppCompatActivity {
                     Intent n = new Intent(getApplicationContext(), NewDonations.class);
                     startActivity(n);
                 } else if (id == R.id.nav_payments) {
-                    Intent n = new Intent(getApplicationContext(), NewPayments.class);
-                    startActivity(n);
+                    Intent p = new Intent(getApplicationContext(), NewPayments.class);
+                    startActivity(p);
+                } else if (id == R.id.nav_approved_payments) {
+                    Intent ap = new Intent(getApplicationContext(), ApprovedPayments.class);
+                    startActivity(ap);
                 } else if (id == R.id.nav_received_donations) {
                     Intent nrd = new Intent(getApplicationContext(), ReceivedDonations.class);
                     startActivity(nrd);
@@ -278,8 +282,13 @@ public class Dashboard extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_dispatched_donations).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_artwork_inventory).setVisible(false);
 
+        navigationView.getMenu().findItem(R.id.nav_payments).setVisible(false);
+        navigationView.getMenu().findItem(R.id.nav_approved_payments).setVisible(false);
+
         if (session.isLoggedIn()) {
             if (user.getUser_type().equals("Finance Manager")) {
+                navigationView.getMenu().findItem(R.id.nav_payments).setVisible(true);
+                navigationView.getMenu().findItem(R.id.nav_approved_payments).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_new_donations).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_received_donations).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_dispatched_donations).setVisible(true);
