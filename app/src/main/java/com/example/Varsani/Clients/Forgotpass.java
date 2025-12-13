@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Forgotpass extends AppCompatActivity {
+
     private Button resetBtn;
     private ProgressBar progressBar;
     private EditText edt_email,edt_password,edt_password_c;
