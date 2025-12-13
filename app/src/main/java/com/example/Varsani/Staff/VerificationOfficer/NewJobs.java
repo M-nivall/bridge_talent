@@ -30,6 +30,7 @@ import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.R;
 import com.example.Varsani.Staff.Finance.Adapters.AdapterPayment;
 import com.example.Varsani.Staff.Finance.Models.PaymentModel;
+import com.example.Varsani.Staff.VerificationOfficer.Models.NewJobsModel;
 import com.example.Varsani.utils.SessionHandler;
 
 import org.json.JSONArray;
@@ -41,8 +42,8 @@ import java.util.List;
 import java.util.Map;
 
 public class NewJobs extends AppCompatActivity {
-    private List<PaymentModel> list;
-    private AdapterPayment adapterPayment;
+    private List<NewJobsModel> list;
+    private AdapterNewJobs adapterPayment;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
 
@@ -94,7 +95,7 @@ public class NewJobs extends AppCompatActivity {
                                 for(int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject jsn = jsonArray.getJSONObject(i);
 
-                                    PaymentModel paymentModel = new PaymentModel(
+                                    NewJobsModel newJobsModel = new NewJobsModel(
                                             jsn.getString("job_id"),
                                             jsn.getString("title"),
                                             jsn.getString("job_category"),
@@ -117,7 +118,7 @@ public class NewJobs extends AppCompatActivity {
                                             jsn.getString("payment_status")
                                     );
 
-                                    list.add(paymentModel);
+                                    list.add(newJobsModel);
                                 }
 
                                 adapterPayment=new AdapterPayment(getApplicationContext(),list);
