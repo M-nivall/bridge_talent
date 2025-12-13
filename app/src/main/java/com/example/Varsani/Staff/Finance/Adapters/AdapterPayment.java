@@ -29,8 +29,6 @@ public class AdapterPayment extends RecyclerView.Adapter<RecyclerView.ViewHolder
 //    private OnItemClickListener mOnItemClickListener;
 //    private OnMoreButtonClickListener onMoreButtonClickListener;
 
-    //
-
     private SessionHandler session;
     private UserModel user;
     private String clientId = "";
