@@ -30,6 +30,7 @@ import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.R;
 import com.example.Varsani.Staff.Finance.Adapters.AdapterPayment;
 import com.example.Varsani.Staff.Finance.Models.PaymentModel;
+import com.example.Varsani.Staff.VerificationOfficer.Adapters.AdapterNewJobs;
 import com.example.Varsani.Staff.VerificationOfficer.Models.NewJobsModel;
 import com.example.Varsani.utils.SessionHandler;
 
@@ -43,7 +44,7 @@ import java.util.Map;
 
 public class NewJobs extends AppCompatActivity {
     private List<NewJobsModel> list;
-    private AdapterNewJobs adapterPayment;
+    private AdapterNewJobs adapterNewJobs;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
 
@@ -121,8 +122,8 @@ public class NewJobs extends AppCompatActivity {
                                     list.add(newJobsModel);
                                 }
 
-                                adapterPayment=new AdapterPayment(getApplicationContext(),list);
-                                recyclerView.setAdapter(adapterPayment);
+                                adapterNewJobs=new AdapterNewJobs(getApplicationContext(),list);
+                                recyclerView.setAdapter(adapterNewJobs);
                                 progressBar.setVisibility(View.GONE);
 
                             }else{
