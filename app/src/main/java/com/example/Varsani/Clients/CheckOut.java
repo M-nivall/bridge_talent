@@ -45,7 +45,6 @@ import java.util.Map;
 public class CheckOut extends AppCompatActivity {
     private SessionHandler session;
     private UserModel user;
-
     private LinearLayout layout_checkout;
     private RelativeLayout layout_card;
     private RelativeLayout layout_bottom;
