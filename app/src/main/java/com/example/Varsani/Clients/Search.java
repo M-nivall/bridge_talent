@@ -72,6 +72,7 @@ public class Search extends AppCompatActivity {
 
         getArtWork();
         getExhibition();
+
     }
 
     @Override
