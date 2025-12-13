@@ -85,7 +85,6 @@ public class AdapterNewJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder
             view.txv_datePaid.setText("Date: " + o.getDatePosted() );
             view.txv_status.setText("Status: " + o.getJobStatus() );
 
-
             view.btn_job_details.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
