@@ -16,6 +16,7 @@ import com.example.Varsani.R;
 import com.example.Varsani.Staff.Finance.Adapters.AdapterPayment;
 import com.example.Varsani.Staff.Finance.Models.PaymentModel;
 import com.example.Varsani.Staff.Finance.PaymentDetails;
+import com.example.Varsani.Staff.VerificationOfficer.JobDetails;
 import com.example.Varsani.Staff.VerificationOfficer.Models.NewJobsModel;
 import com.example.Varsani.utils.SessionHandler;
 
@@ -89,7 +90,7 @@ public class AdapterNewJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 @Override
                 public void onClick(View v) {
 
-                    Intent in = new Intent(ctx, PaymentDetails.class);
+                    Intent in = new Intent(ctx, JobDetails.class);
                     in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     in.putExtra("jobID", o.getJobID());

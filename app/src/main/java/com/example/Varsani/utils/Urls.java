@@ -90,6 +90,7 @@ public class Urls {
 
     //Verification Officer
     public static final String URL_NEW_JOBS=ROOT_URL + "verification_officer/new_jobs.php";
+    public static final String URL_APPROVE_JOB=ROOT_URL + "verification_officer/approve_job.php";
 
     //shipping mrg
     public static final String URL_ORDERS_TO_SHIP=ROOT_URL + "ship_mrg/orders_to_ship.php";
