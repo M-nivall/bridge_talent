@@ -1,6 +1,5 @@
 package com.example.Varsani.Clients.Models;
 
-
 public class ServicesModal {
 
     private String productID;
