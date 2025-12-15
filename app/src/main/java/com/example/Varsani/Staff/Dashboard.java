@@ -46,6 +46,7 @@ import com.example.Varsani.Staff.Store_mrg.RequestedMaterials;
 import com.example.Varsani.Staff.Store_mrg.ViewStock;
 import com.example.Varsani.Staff.Technician.AssignedServices;
 import com.example.Varsani.Staff.Technician.AssignedVisits;
+import com.example.Varsani.Staff.VerificationOfficer.ActiveJobs;
 import com.example.Varsani.Staff.VerificationOfficer.NewJobs;
 import com.example.Varsani.utils.SessionHandler;
 import com.google.android.material.navigation.NavigationView;
@@ -100,6 +101,9 @@ public class Dashboard extends AppCompatActivity {
                 } else if (id == R.id.nav_new_jobs) {
                     Intent nj = new Intent(getApplicationContext(), NewJobs.class);
                     startActivity(nj);
+                } else if (id == R.id.nav_active_jobs) {
+                    Intent naj = new Intent(getApplicationContext(), ActiveJobs.class);
+                    startActivity(naj);
                 } else if (id == R.id.nav_received_donations) {
                     Intent nrd = new Intent(getApplicationContext(), ReceivedDonations.class);
                     startActivity(nrd);
@@ -289,6 +293,7 @@ public class Dashboard extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_payments).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_approved_payments).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_new_jobs).setVisible(false);
+        navigationView.getMenu().findItem(R.id.nav_active_jobs).setVisible(false);
 
         if (session.isLoggedIn()) {
             if (user.getUser_type().equals("Finance Manager")) {
@@ -299,6 +304,7 @@ public class Dashboard extends AppCompatActivity {
                 //navigationView.getMenu().findItem(R.id.nav_dispatched_donations).setVisible(true);
             } else if (user.getUser_type().equals("Verification Officer")) {
                 navigationView.getMenu().findItem(R.id.nav_new_jobs).setVisible(true);
+                navigationView.getMenu().findItem(R.id.nav_active_jobs).setVisible(true);
             } else if (user.getUser_type().equals("Shipping Manager")) {
                 navigationView.getMenu().findItem(R.id.nav_orders_to_shipp).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_shipping_orders).setVisible(true);

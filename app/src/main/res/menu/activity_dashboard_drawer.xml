@@ -21,6 +21,9 @@
             android:id="@+id/nav_new_jobs"
             android:title="New Jobs" />
         <item
+            android:id="@+id/nav_active_jobs"
+            android:title="Active Jobs" />
+        <item
             android:id="@+id/nav_received_donations"
             android:title="Received Donations" />
         <item
