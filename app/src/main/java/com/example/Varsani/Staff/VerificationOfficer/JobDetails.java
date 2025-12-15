@@ -112,6 +112,10 @@ public class JobDetails extends AppCompatActivity {
         tvPaymentCode.setText(transactionCode);
         tvPaymentStatus.setText(paymentStatus);
 
+        if (jobStatus.equalsIgnoreCase("Active")) {
+            btnPost.setVisibility(View.GONE);
+        }
+
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -244,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_supplier_login).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_workshops).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_my_donation_history).setVisible(false);
+        navigationView.getMenu().findItem(R.id.nav_applied_exhibitions).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_donation_history).setVisible(false);
         navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(false);
 
@@ -260,12 +261,12 @@ public class MainActivity extends AppCompatActivity {
                 navigationView.getMenu().findItem(R.id.nav_profile).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_feedback).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_logout).setVisible(true);
-                navigationView.getMenu().findItem(R.id.nav_orders).setVisible(false);
-                navigationView.getMenu().findItem(R.id.nav_bookings).setVisible(false);
-                navigationView.getMenu().findItem(R.id.nav_artwork).setVisible(true);
-                navigationView.getMenu().findItem(R.id.nav_my_donation).setVisible(true);
-                navigationView.getMenu().findItem(R.id.nav_workshops).setVisible(true);
-                navigationView.getMenu().findItem(R.id.nav_my_donation_history).setVisible(true);
+                //navigationView.getMenu().findItem(R.id.nav_orders).setVisible(false);
+                //navigationView.getMenu().findItem(R.id.nav_bookings).setVisible(false);
+                //navigationView.getMenu().findItem(R.id.nav_artwork).setVisible(true);
+                //navigationView.getMenu().findItem(R.id.nav_my_donation).setVisible(true);
+                //navigationView.getMenu().findItem(R.id.nav_workshops).setVisible(true);
+                //navigationView.getMenu().findItem(R.id.nav_my_donation_history).setVisible(true);
                 navigationView.getMenu().findItem(R.id.nav_applied_jobs).setVisible(true);
             }
 

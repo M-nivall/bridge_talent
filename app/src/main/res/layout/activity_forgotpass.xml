@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/steelsink"
+    android:background="@drawable/login_wallpaper"
     tools:context=".Clients.Login">
 
     <androidx.cardview.widget.CardView
@@ -49,6 +49,7 @@
 
 
             <ProgressBar
+                android:visibility="gone"
                 android:id="@+id/progressBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
