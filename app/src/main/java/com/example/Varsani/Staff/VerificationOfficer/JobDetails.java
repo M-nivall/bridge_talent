@@ -47,7 +47,7 @@ public class JobDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
 
-        getSupportActionBar().setSubtitle("Payment Details");
+        getSupportActionBar().setSubtitle("Job Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tvTitle = findViewById(R.id.tvTitle);
