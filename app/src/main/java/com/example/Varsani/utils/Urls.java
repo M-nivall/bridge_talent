@@ -129,6 +129,7 @@ public class Urls {
     //Employer
     public static final String URL_MY_JOBS=ROOT_URL + "employer/my_jobs.php";
     public static final String URL_APPLICANTS=ROOT_URL + "employer/applicants.php";
+    public static final String URL_RESPOND_APPLICATION=ROOT_URL + "employer/respond_application.php";
     //Applicant
     public static final String URL_COMPLETE_PROFILE = ROOT_URL + "applicants/complete_profile.php/";
     public static final String URL_SUBMIT_APPLICATION = ROOT_URL+"applicants/submit_application.php";

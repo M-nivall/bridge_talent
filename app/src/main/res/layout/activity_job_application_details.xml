@@ -130,6 +130,7 @@
                     android:id="@+id/tvSkills"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="Skills goes here"
                     android:textSize="14sp"
                     android:textColor="#424242"
                     android:layout_marginBottom="10dp"/>
@@ -145,6 +146,7 @@
                     android:id="@+id/tvEducation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="Education goes here"
                     android:textSize="14sp"
                     android:textColor="#424242"/>
 
@@ -210,6 +212,26 @@
                     android:layout_height="48dp"
                     android:text="VIEW COVER LETTER"
                     android:textStyle="bold"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnShortlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="SHORTLIST APPLICANT"
+                    android:textStyle="bold"
+                    android:backgroundTint="#2E7D32"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReject"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="REJECT APPLICATION"
+                    android:textStyle="bold"
+                    android:backgroundTint="#C62828"
+                    android:textColor="@android:color/white"/>
+
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
