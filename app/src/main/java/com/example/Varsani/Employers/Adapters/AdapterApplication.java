@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.Varsani.Clients.Models.UserModel;
+import com.example.Varsani.Employers.JobApplicationDetails;
 import com.example.Varsani.Employers.Models.ApplicantsModel;
 import com.example.Varsani.Employers.Models.MyJobsModel;
 import com.example.Varsani.Employers.MyJobDetails;
