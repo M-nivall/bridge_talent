@@ -1,6 +1,7 @@
 package com.example.Varsani.Employers;
 
 import static com.example.Varsani.utils.Urls.URL_APPROVE_PAYMENT;
+import static com.example.Varsani.utils.Urls.URL_DOCUMENTS;
 import static com.example.Varsani.utils.Urls.URL_RESPOND_APPLICATION;
 
 import android.content.Intent;
@@ -33,6 +34,7 @@ public class JobApplicationDetails extends AppCompatActivity {
 
     private String cvUrl, coverLetter;
     private String applicationID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,17 +80,36 @@ public class JobApplicationDetails extends AppCompatActivity {
         cvUrl = intent.getStringExtra("cvUrl");
         coverLetter = intent.getStringExtra("coverLetter");
 
-        // View CV
+// View CV
         btnViewCV.setOnClickListener(v -> {
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(cvUrl));
+
+            if (cvUrl == null || cvUrl.isEmpty()) {
+                Toast.makeText(this, "CV not available", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String fullCvUrl = URL_DOCUMENTS + cvUrl;
+
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(fullCvUrl));
             startActivity(i);
         });
 
-        // View Cover Letter
+// View Cover Letter
         btnViewCover.setOnClickListener(v -> {
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(coverLetter));
+
+            if (coverLetter == null || coverLetter.isEmpty()) {
+                Toast.makeText(this, "Cover letter not available", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String fullCoverUrl = URL_DOCUMENTS + coverLetter;
+
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(fullCoverUrl));
             startActivity(i);
         });
+
 
         btnShortlist.setOnClickListener(v ->
                 showResponseDialog("Shortlisted")
