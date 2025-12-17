@@ -232,7 +232,6 @@ public class AdapterArticles extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             filteredList.add(androidVersion);
                         }
                     }
-
                     items = filteredList;
                 }
 
