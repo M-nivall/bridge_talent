@@ -9,6 +9,7 @@ import com.example.Varsani.Employers.Models.EmployerModel;
 import java.util.Date;
 
 public class SessionHandler {
+
     private static final String PREF_NAME = "UserSession";
     private static final String KEY_CLIENT_ID = "clientID";
     private static final String KEY_ID = "ID";
