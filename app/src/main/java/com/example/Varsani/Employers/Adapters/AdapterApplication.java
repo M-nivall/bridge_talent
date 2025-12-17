@@ -86,22 +86,24 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
                 @Override
                 public void onClick(View v) {
 
-                    Intent in = new Intent(ctx, MyJobDetails.class);
+                    Intent in = new Intent(ctx, JobApplicationDetails.class);
                     in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                    in.putExtra("jobID", o.getJobID());
-                    in.putExtra("jobTitle", o.getTitle());
-                    in.putExtra("jobCategory", o.getJobCategory());
-                    in.putExtra("jobLevel", o.getJobLevel());
-                    in.putExtra("description", o.getDescription());
-                    in.putExtra("qualifications", o.getQualifications());
-                    in.putExtra("jobResponsibilities", o.getJobResponsibilities());
-                    in.putExtra("location", o.getLocation());
-                    in.putExtra("jobType", o.getJobType());
-                    in.putExtra("salaryRange", o.getSalaryRange());
-                    in.putExtra("datePosted", o.getDatePosted());
-                    in.putExtra("deadline", o.getDeadline());
-                    in.putExtra("jobStatus", o.getJobStatus());
+                    in.putExtra("applicationID", o.getApplicationId());
+                    in.putExtra("applicantId", o.getApplicantId());
+                    in.putExtra("cvUrl", o.getCvUrl());
+                    in.putExtra("coverLetter", o.getCoverLater());
+                    in.putExtra("salary", o.getSalary());
+                    in.putExtra("noticePeriod", o.getNoticePeriod());
+                    in.putExtra("dateApplied", o.getDateApplied());
+                    in.putExtra("fullName", o.getFullName());
+                    in.putExtra("email", o.getEmail());
+                    in.putExtra("phone", o.getPhone());
+                    in.putExtra("bio", o.getBio());
+                    in.putExtra("skills", o.getSkills());
+                    in.putExtra("education", o.getEducation());
+                    in.putExtra("profileUrl", o.getProfileUrl());
+                    in.putExtra("applicationStatus", o.getApplicationStatus());
 
                     ctx.startActivity(in);
                 }

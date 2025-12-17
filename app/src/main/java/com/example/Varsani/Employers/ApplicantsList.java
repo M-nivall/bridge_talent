@@ -1,6 +1,5 @@
 package com.example.Varsani.Employers;
 
-import static com.example.Varsani.utils.Urls.URL_APPLICANT;
 import static com.example.Varsani.utils.Urls.URL_APPLICANTS;
 
 import android.content.Intent;
@@ -46,7 +45,7 @@ import java.util.Map;
 
 public class ApplicantsList extends AppCompatActivity {
     private List<ApplicantsModel> list;
-    private AdapterApplication adapterMyJobs;
+    private AdapterApplication adapterApplication;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
 
@@ -126,8 +125,8 @@ public class ApplicantsList extends AppCompatActivity {
                                     list.add(applicantsModel);
                                 }
 
-                                adapterMyJobs=new AdapterMyJobs(getApplicationContext(),list);
-                                recyclerView.setAdapter(adapterMyJobs);
+                                adapterApplication=new AdapterApplication(getApplicationContext(),list);
+                                recyclerView.setAdapter(adapterApplication);
                                 progressBar.setVisibility(View.GONE);
 
                             }else{
