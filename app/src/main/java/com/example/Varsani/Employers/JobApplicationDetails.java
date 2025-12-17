@@ -134,9 +134,7 @@ public class JobApplicationDetails extends AppCompatActivity {
 
     private void submitEmployerResponse(String status, String note) {
 
-        String url = URL_RESPOND_APPLICATION;
-
-        StringRequest request = new StringRequest(Request.Method.POST, url,
+        StringRequest request = new StringRequest(Request.Method.POST, URL_RESPOND_APPLICATION,
                 response -> {
                     Toast toast = Toast.makeText(
                             JobApplicationDetails.this,
