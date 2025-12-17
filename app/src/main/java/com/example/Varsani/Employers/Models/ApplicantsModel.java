@@ -9,8 +9,7 @@ public class ApplicantsModel {
     private String salary;
     private String noticePeriod;
     private String dateApplied;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private String email;
     private String phone;
     private String bio;
@@ -28,8 +27,7 @@ public class ApplicantsModel {
             String salary,
             String noticePeriod,
             String dateApplied,
-            String firstName,
-            String lastName,
+            String fullName,
             String email,
             String phone,
             String bio,
@@ -45,8 +43,7 @@ public class ApplicantsModel {
         this.salary = salary;
         this.noticePeriod = noticePeriod;
         this.dateApplied = dateApplied;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.bio = bio;
@@ -85,12 +82,8 @@ public class ApplicantsModel {
         return dateApplied;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
+    public String getFullName() {
+        return fullName;
     }
 
     public String getEmail() {

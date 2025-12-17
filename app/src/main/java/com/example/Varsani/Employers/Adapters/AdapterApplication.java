@@ -44,7 +44,7 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txv_applicant_name,txv_salary, txv_jobType,txv_datePosted,txv_status;
+        public TextView txv_applicant_name,txv_salary,txv_dateApplied,txv_status;
         public Button btn_job_details;
 
 
@@ -54,8 +54,7 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
             txv_status =v.findViewById(R.id.txv_status);
             txv_salary =v.findViewById(R.id.txv_salary);
             txv_applicant_name =v.findViewById(R.id.txv_applicant_name);
-            txv_jobType = v.findViewById(R.id.txv_jobType);
-            txv_datePosted = v.findViewById(R.id.txv_datePosted);
+            txv_dateApplied = v.findViewById(R.id.txv_dateApplied);
             btn_job_details = v.findViewById(R.id.btn_job_details);
 
         }
@@ -77,11 +76,10 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
 
             final ApplicantsModel o= items.get(position);
 
-            view.txv_applicant_name.setText("Applicant Name: " + o.getApplicantId());
+            view.txv_applicant_name.setText("Applicant Name: " + o.getFullName());
             view.txv_salary.setText("Salary: " + o.getSalary());
-            view.txv_jobType.setText("Employment Type: " + o.getJobType());
-            view.txv_datePosted.setText("Date Posted: " + o.getDatePosted() );
-            view.txv_status.setText("Status: " + o.getJobStatus() );
+            view.txv_dateApplied.setText("Date Applied: " + o.getDateApplied() );
+            view.txv_status.setText("Status: " + o.getApplicationStatus());
 
 
             view.btn_job_details.setOnClickListener(new View.OnClickListener() {

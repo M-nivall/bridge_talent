@@ -39,19 +39,10 @@
                 android:layout_marginTop="6dp" />
 
             <TextView
-                android:id="@+id/txv_jobType"
+                android:id="@+id/txv_dateApplied"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Employment Type: Full Time"
-                android:textColor="#444444"
-                android:textSize="15sp"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/txv_datePosted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date Posted: 12/10/2025"
+                android:text="Date Applied: 12/10/2025"
                 android:textColor="#444444"
                 android:textSize="15sp"
                 android:layout_marginTop="8dp" />
@@ -71,7 +62,7 @@
                 android:id="@+id/btn_job_details"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
-                android:text="More Details"
+                android:text="Applicant Details"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:paddingLeft="12dp"

@@ -1,6 +1,7 @@
 package com.example.Varsani.Employers;
 
 import static com.example.Varsani.utils.Urls.URL_APPLICANT;
+import static com.example.Varsani.utils.Urls.URL_APPLICANTS;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -89,7 +90,7 @@ public class ApplicantsList extends AppCompatActivity {
     }
 
     public void getApplicants(){
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_APPLICANT,
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_APPLICANTS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -112,8 +113,7 @@ public class ApplicantsList extends AppCompatActivity {
                                             jsn.getString("salary"),
                                             jsn.getString("notice_period"),
                                             jsn.getString("date_applied"),
-                                            jsn.getString("first_name"),
-                                            jsn.getString("last_name"),
+                                            jsn.getString("full_name"),
                                             jsn.getString("email"),
                                             jsn.getString("phone"),
                                             jsn.getString("bio"),
