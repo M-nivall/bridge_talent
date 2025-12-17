@@ -52,8 +52,6 @@ public class AdapterJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private AdapterJobs.OnItemClickListener mOnItemClickListener;
     private AdapterJobs.OnMoreButtonClickListener onMoreButtonClickListener;
 
-    //
-
     private SessionHandler session;
     private UserModel user;
     private String clientId = "";
