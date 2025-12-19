@@ -64,7 +64,7 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_job_items, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_job_applications, parent, false);
         vh = new AdapterApplication.OriginalViewHolder(v);
         return vh;
     }
@@ -78,7 +78,7 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
             final ApplicantsModel o= items.get(position);
 
             view.txv_applicant_name.setText("Applicant Name: " + o.getFullName());
-            view.txv_salary.setText("Salary: " + o.getSalary());
+            view.txv_salary.setText("Expected Salary: Ksh " + o.getSalary());
             view.txv_dateApplied.setText("Date Applied: " + o.getDateApplied() );
             view.txv_status.setText("Status: " + o.getApplicationStatus());
 

@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,8 +31,8 @@ public class JobApplicationDetails extends AppCompatActivity {
     private TextView tvName, tvEmail, tvPhone, tvBio, tvSkills, tvEducation,
             tvSalary, tvNotice, tvDate, tvStatus;
 
-    private MaterialButton btnViewCV, btnViewCover;
-    private MaterialButton btnShortlist, btnReject;
+    private Button btnViewCV, btnViewCover;
+    private Button btnShortlist, btnReject;
 
     private String cvUrl, coverLetter;
     private String applicationID;
@@ -40,6 +42,9 @@ public class JobApplicationDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_application_details);
+
+        //getSupportActionBar().setSubtitle("Applicant Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Init views
         tvName = findViewById(R.id.tvName);
@@ -65,12 +70,12 @@ public class JobApplicationDetails extends AppCompatActivity {
         applicationID = intent.getStringExtra("applicationID");
 
         tvName.setText(intent.getStringExtra("fullName"));
-        tvEmail.setText(intent.getStringExtra("email"));
-        tvPhone.setText(intent.getStringExtra("phone"));
+        tvEmail.setText("Email: " + intent.getStringExtra("email"));
+        tvPhone.setText("Phone: " + intent.getStringExtra("phone"));
         tvBio.setText(intent.getStringExtra("bio"));
         tvSkills.setText(intent.getStringExtra("skills"));
         tvEducation.setText(intent.getStringExtra("education"));
-        tvSalary.setText("Expected Salary: " + intent.getStringExtra("salary"));
+        tvSalary.setText("Expected Salary: Ksh " + intent.getStringExtra("salary"));
         tvNotice.setText("Notice Period: " + intent.getStringExtra("noticePeriod"));
         tvDate.setText("Applied On: " + intent.getStringExtra("dateApplied"));
 
@@ -120,6 +125,14 @@ public class JobApplicationDetails extends AppCompatActivity {
         );
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     /**
      * =============================
      * EMPLOYER RESPONSE DIALOG
@@ -136,7 +149,7 @@ public class JobApplicationDetails extends AppCompatActivity {
         }
 
         final EditText input = new EditText(this);
-        input.setHint("Optional message to applicant");
+        input.setHint("Feedback message to applicant");
         input.setMinLines(3);
         input.setGravity(Gravity.TOP | Gravity.START);
         input.setPadding(24, 24, 24, 24);

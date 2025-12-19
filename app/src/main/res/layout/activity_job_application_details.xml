@@ -198,7 +198,7 @@
                     android:textColor="#424242"
                     android:layout_marginBottom="12dp"/>
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/btnViewCV"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -206,14 +206,14 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/btnViewCover"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:text="VIEW COVER LETTER"
                     android:textStyle="bold"/>
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/btnShortlist"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -223,7 +223,7 @@
                     android:textColor="@android:color/white"
                     android:layout_marginBottom="8dp"/>
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/btnReject"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"

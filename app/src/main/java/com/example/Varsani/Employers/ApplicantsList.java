@@ -108,7 +108,7 @@ public class ApplicantsList extends AppCompatActivity {
                                             jsn.getString("application_id"),
                                             jsn.getString("applicant_id"),
                                             jsn.getString("cv_url"),
-                                            jsn.getString("cover_later"),
+                                            jsn.getString("cover_letter"),
                                             jsn.getString("salary"),
                                             jsn.getString("notice_period"),
                                             jsn.getString("date_applied"),
