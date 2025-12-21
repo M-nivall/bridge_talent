@@ -66,10 +66,13 @@ public class ApplicationDetails extends AppCompatActivity {
         tv_location.setText("Location: " + location);
         tv_email.setText("Location: " + email);
 
-        if (!employerFeedback.equalsIgnoreCase("NULL") || !employerFeedback.isEmpty()) {
+        if (employerFeedback != null && !employerFeedback.trim().isEmpty()) {
             card_feedback.setVisibility(View.VISIBLE);
             tv_feedback.setText(employerFeedback);
+        } else {
+            card_feedback.setVisibility(View.GONE);
         }
+
     }
 
     @Override
