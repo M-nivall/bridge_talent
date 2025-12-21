@@ -63,7 +63,7 @@ public class AdapterShortlisted extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder vh;
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_job_applications, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_shortlisted, parent, false);
         vh = new AdapterShortlisted.OriginalViewHolder(v);
         return vh;
     }

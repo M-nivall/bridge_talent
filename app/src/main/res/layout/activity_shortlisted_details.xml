@@ -214,6 +214,7 @@
                     android:textStyle="bold"/>
 
                 <Button
+                    android:visibility="gone"
                     android:id="@+id/btnShortlist"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -224,6 +225,7 @@
                     android:layout_marginBottom="8dp"/>
 
                 <Button
+                    android:visibility="gone"
                     android:id="@+id/btnReject"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
