@@ -66,6 +66,7 @@ public class ApplicationDetails extends AppCompatActivity {
         tv_location.setText("Location: " + location);
         tv_email.setText("Location: " + email);
 
+        card_feedback.setVisibility(View.GONE);
         if (employerFeedback != null && !employerFeedback.trim().isEmpty()) {
             card_feedback.setVisibility(View.VISIBLE);
             tv_feedback.setText(employerFeedback);
