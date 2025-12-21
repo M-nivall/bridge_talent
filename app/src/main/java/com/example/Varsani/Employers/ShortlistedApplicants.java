@@ -29,6 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.Employers.Adapters.AdapterApplication;
+import com.example.Varsani.Employers.Adapters.AdapterShortlisted;
 import com.example.Varsani.Employers.Models.ApplicantsModel;
 import com.example.Varsani.R;
 import com.example.Varsani.utils.SessionHandler;
@@ -44,7 +45,7 @@ import java.util.Map;
 public class ShortlistedApplicants extends AppCompatActivity {
 
     private List<ApplicantsModel> list;
-    private AdapterApplication adapterApplication;
+    private AdapterShortlisted adapterShortlisted;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
 
@@ -123,8 +124,8 @@ public class ShortlistedApplicants extends AppCompatActivity {
                                     list.add(applicantsModel);
                                 }
 
-                                adapterApplication=new AdapterApplication(getApplicationContext(),list);
-                                recyclerView.setAdapter(adapterApplication);
+                                adapterShortlisted=new AdapterShortlisted(getApplicationContext(),list);
+                                recyclerView.setAdapter(adapterShortlisted);
                                 progressBar.setVisibility(View.GONE);
 
                             }else{
