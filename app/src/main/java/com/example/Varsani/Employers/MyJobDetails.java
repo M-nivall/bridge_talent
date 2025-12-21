@@ -75,6 +75,12 @@ public class MyJobDetails extends AppCompatActivity {
             in.putExtra("jobID", jobID);
             startActivity(in);
         });
+
+        btnShortlistedApplicants.setOnClickListener(v -> {
+            Intent in = new Intent(MyJobDetails.this, ShortlistedApplicants.class);
+            in.putExtra("jobID", jobID);
+            startActivity(in);
+        });
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
