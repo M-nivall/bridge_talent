@@ -179,7 +179,22 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:background="@drawable/btn_primary"
+            android:textColor="#fff"
+            android:layout_marginBottom="12dp" />
+
+        <!-- SHORTLISTED APPLICANTS BUTTON -->
+        <Button
+            android:id="@+id/btnShortlistedApplicants"
+            android:text="Shortlisted Applicants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:background="@drawable/btn_secondary"
             android:textColor="#fff" />
+
+
 
     </LinearLayout>
 

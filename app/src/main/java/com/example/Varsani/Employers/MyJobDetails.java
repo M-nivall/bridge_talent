@@ -14,7 +14,7 @@ public class MyJobDetails extends AppCompatActivity {
 
     private TextView tvTitle, tvCategory, tvLevel, tvDescription, tvQualifications,
             tvResponsibilities, tvLocation, tvType, tvSalary, tvDatePosted, tvDeadline, tvStatus;
-    private Button btnViewApplicants;
+    private Button btnViewApplicants, btnShortlistedApplicants;
     private String jobID;
 
     @Override
@@ -38,6 +38,7 @@ public class MyJobDetails extends AppCompatActivity {
         tvDeadline = findViewById(R.id.tvDeadline);
         tvStatus = findViewById(R.id.tvStatus);
         btnViewApplicants = findViewById(R.id.btnViewApplicants);
+        btnShortlistedApplicants = findViewById(R.id.btnShortlistedApplicants);
 
         Intent intent=getIntent();
 
