@@ -112,7 +112,6 @@ public class AdapterShortlisted extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         }
     }
-
     @Override
     public int getItemCount() {
         return items.size();
