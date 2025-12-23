@@ -169,5 +169,4 @@ public class ApprovedPayments extends AppCompatActivity {
         finish();
         startActivity(getIntent());
     }
-
 }
