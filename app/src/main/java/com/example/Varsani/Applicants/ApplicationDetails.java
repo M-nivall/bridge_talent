@@ -73,8 +73,6 @@ public class ApplicationDetails extends AppCompatActivity {
             tv_feedback.setText(employerFeedback);
         }
 
-
-
     }
 
     @Override
