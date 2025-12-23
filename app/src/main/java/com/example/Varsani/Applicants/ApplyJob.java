@@ -335,5 +335,4 @@ public class ApplyJob extends AppCompatActivity {
             return null;
         }
     }
-
 }
