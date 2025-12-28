@@ -29,7 +29,6 @@ public class SessionHandler {
     private static final String KEY_EDUCATION = "education";
     private static final String KEY_PROFILE_URL = "profileUrl";
 
-
     private static final String KEY_COMPANY_NAME = "companyName";
     private static final String KEY_INDUSTRY = "industry";
     private static final String KEY_CONTACTS = "contacts";
