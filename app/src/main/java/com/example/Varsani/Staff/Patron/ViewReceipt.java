@@ -91,4 +91,5 @@ public class ViewReceipt extends AppCompatActivity {
         toast.setGravity(Gravity.TOP, 0, 250);
         toast.show();
     }
+
 }
