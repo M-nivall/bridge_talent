@@ -28,8 +28,6 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
 //    private OnItemClickListener mOnItemClickListener;
 //    private OnMoreButtonClickListener onMoreButtonClickListener;
 
-    //
-
     private SessionHandler session;
     private UserModel user;
     private String clientId = "";
