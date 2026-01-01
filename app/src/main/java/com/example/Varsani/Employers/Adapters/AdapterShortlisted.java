@@ -34,7 +34,6 @@ public class AdapterShortlisted extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public static final String TAG = "Orders adapter";
 
-
     public AdapterShortlisted(Context context, List<ApplicantsModel> items) {
         this.items = items;
         ctx = context;
