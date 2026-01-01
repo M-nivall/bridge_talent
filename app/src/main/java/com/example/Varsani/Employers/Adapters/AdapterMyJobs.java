@@ -34,7 +34,6 @@ public class AdapterMyJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public static final String TAG = "Orders adapter";
 
-
     public AdapterMyJobs(Context context, List<MyJobsModel> items) {
         this.items = items;
         ctx = context;
