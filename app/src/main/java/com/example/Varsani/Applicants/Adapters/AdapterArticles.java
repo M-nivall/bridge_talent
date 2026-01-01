@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.Varsani.Applicants.ArticleDetails;
 import com.example.Varsani.Applicants.Models.ArticlesMdel;
 import com.example.Varsani.Artists.Adapters.AdapterExhibitions;
 import com.example.Varsani.Artists.ExhibitionDetails;
@@ -170,7 +171,7 @@ public class AdapterArticles extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         String content=p.getContent();
                         String dateCreated=p.getDateCreated();
 
-                        Intent in = new Intent(ctx, MoreExhibitionDetails.class);
+                        Intent in = new Intent(ctx, ArticleDetails.class);
                         in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         in.putExtra("articleID", articleID);
                         in.putExtra("title", title);
