@@ -39,8 +39,6 @@ public class AdapterArticles extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private AdapterArticles.OnItemClickListener mOnItemClickListener;
     private AdapterArticles.OnMoreButtonClickListener onMoreButtonClickListener;
 
-    //
-
     private SessionHandler session;
     private UserModel user;
     private String clientId = "";
