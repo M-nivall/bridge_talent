@@ -9,6 +9,9 @@
             android:title="Profile"
             android:id="@+id/nav_home"/>
         <item
+            android:id="@+id/nav_articles"
+            android:title="Articles" />
+        <item
             android:id="@+id/nav_new_donations"
             android:title="New Donations" />
         <item
