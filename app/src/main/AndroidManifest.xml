@@ -15,6 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Staff.EditorialMng.Articles"
+            android:exported="false" />
+        <activity
             android:name=".Applicants.ArticleDetails"
             android:exported="false" />
         <activity
@@ -317,5 +320,4 @@
             android:name=".Clients.Register"
             android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
-
 </manifest>

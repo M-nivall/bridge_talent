@@ -196,7 +196,6 @@ public class AdapterArticles extends RecyclerView.Adapter<RecyclerView.ViewHolde
         progressDialog.show();
     }
 
-
     @Override
     public int getItemCount() {
         return items.size();
