@@ -228,7 +228,7 @@ public class Articles extends AppCompatActivity {
                 Map<String, String> params = new HashMap<>();
                 params.put("title", title);
                 params.put("content", content);
-                //params.put("created_by", user.getUserID()); // optional
+                params.put("created_by", user.getClientID()); // optional
                 return params;
             }
         };
