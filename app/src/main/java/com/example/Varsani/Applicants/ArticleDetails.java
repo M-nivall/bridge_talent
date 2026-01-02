@@ -1,6 +1,6 @@
 package com.example.Varsani.Applicants;
 
-import static com.example.Varsani.utils.Urls.URL_APPROVE_PAYMENT;
+import static com.example.Varsani.utils.Urls.URL_DISABLE_ARTICLE;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -78,7 +78,7 @@ public class ArticleDetails extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void disableArticle(){
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_APPROVE_PAYMENT,
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL_DISABLE_ARTICLE,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
