@@ -28,7 +28,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import android.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.widget.EditText;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Articles extends AppCompatActivity {
 
@@ -54,6 +62,11 @@ public class Articles extends AppCompatActivity {
         // Views
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
+
+        FloatingActionButton fabAddArticle = findViewById(R.id.fabAddArticle);
+
+        fabAddArticle.setOnClickListener(v -> showAddArticleDialog());
+
 
         // Session
         session = new SessionHandler(this);
@@ -148,6 +161,82 @@ public class Articles extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(Articles.this);
         requestQueue.add(stringRequest);
     }
+
+    private void showAddArticleDialog() {
+
+        View view = LayoutInflater.from(this)
+                .inflate(R.layout.dialog_add_article, null);
+
+        EditText etTitle = view.findViewById(R.id.etTitle);
+        EditText etContent = view.findViewById(R.id.etContent);
+
+        new AlertDialog.Builder(this)
+                .setView(view)
+                .setCancelable(false)
+                .setPositiveButton("Post", (dialog, which) -> {
+                    String title = etTitle.getText().toString().trim();
+                    String content = etContent.getText().toString().trim();
+
+                    if (title.isEmpty() || content.isEmpty()) {
+                        Toast.makeText(this,
+                                "All fields are required",
+                                Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    postArticle(title, content);
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+    }
+
+    private void postArticle(String title, String content) {
+
+        progressBar.setVisibility(View.VISIBLE);
+
+        StringRequest request = new StringRequest(
+                Request.Method.POST,
+                Urls.URL_POST_ARTICLE,
+                response -> {
+                    progressBar.setVisibility(View.GONE);
+
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        if (jsonObject.getInt("status") == 1) {
+                            Toast.makeText(this,
+                                    "Article posted successfully",
+                                    Toast.LENGTH_SHORT).show();
+                            articles(); // refresh list
+                        } else {
+                            Toast.makeText(this,
+                                    jsonObject.getString("message"),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                },
+                error -> {
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(this,
+                            "Network error",
+                            Toast.LENGTH_SHORT).show();
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("title", title);
+                params.put("content", content);
+                //params.put("created_by", user.getUserID()); // optional
+                return params;
+            }
+        };
+
+        Volley.newRequestQueue(this).add(request);
+    }
+
+
 
     @Override
     protected void onResume() {

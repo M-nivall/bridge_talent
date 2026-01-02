@@ -94,7 +94,8 @@ public class Urls {
     public static final String URL_ACTIVE_JOBS=ROOT_URL + "verification_officer/active_jobs.php";
 
     //Editorial Manager
-    public static final String URL_DISABLE_ARTICLE=ROOT_URL + "finance/disable_article.php";
+    public static final String URL_DISABLE_ARTICLE=ROOT_URL + "editorial_mrg/disable_article.php";
+    public static final String URL_POST_ARTICLE=ROOT_URL + "editorial_mrg/post_article.php";
 
     //shipping mrg
     public static final String URL_ORDERS_TO_SHIP=ROOT_URL + "ship_mrg/orders_to_ship.php";
