@@ -65,7 +65,6 @@ public class StaffLogin extends AppCompatActivity {
 
         edt_select.setFocusable(false);
 
-
         session=new SessionHandler(getApplicationContext());
         user=session.getUserDetails();
 
