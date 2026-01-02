@@ -164,7 +164,7 @@ public class AdapterArticles extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 @Override
                 public void onClick(View v) {
 
-                    if (user.getUser_type().equals("Applicant")){
+                    if (user.getUser_type().equals("Applicant") || user.getUser_type().equals("Editorial Manager") ){
 
                         String articleID = p.getArticleID();
                         String title=p.getTitle();
