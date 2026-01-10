@@ -35,6 +35,7 @@ public class ArticleDetails extends AppCompatActivity {
     private Button btnDisableArticle;
     private String articleID;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
