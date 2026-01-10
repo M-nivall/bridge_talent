@@ -140,6 +140,7 @@ public class SessionHandler {
         */
         return currentDate.before(expiryDate);
     }
+
     /**
      * Fetches and returns user details
      *
