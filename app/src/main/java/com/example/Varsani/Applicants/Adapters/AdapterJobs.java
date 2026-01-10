@@ -302,4 +302,5 @@ public class AdapterJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             }
         };
     }
+
 }
