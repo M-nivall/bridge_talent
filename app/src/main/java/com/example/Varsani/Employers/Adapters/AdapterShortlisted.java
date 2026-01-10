@@ -113,4 +113,5 @@ public class AdapterShortlisted extends RecyclerView.Adapter<RecyclerView.ViewHo
     public int getItemCount() {
         return items.size();
     }
+
 }
