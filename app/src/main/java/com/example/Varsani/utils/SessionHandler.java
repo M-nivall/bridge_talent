@@ -133,6 +133,7 @@ public class SessionHandler {
         if (millis == 0) {
             return false;
         }
+
         Date expiryDate = new Date(millis);
 
         /* Check if session is expired by comparing
