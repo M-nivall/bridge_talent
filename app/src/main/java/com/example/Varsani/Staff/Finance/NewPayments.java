@@ -171,4 +171,5 @@ public class NewPayments extends AppCompatActivity {
         finish();
         startActivity(getIntent());
     }
+
 }
