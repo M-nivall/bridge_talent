@@ -6,7 +6,6 @@ public class ArticlesMdel {
     private String content;
     private String dateCreated;
 
-
     public ArticlesMdel(String articleID, String title, String content, String dateCreated) {
         this.articleID = articleID;
         this.title = title;
