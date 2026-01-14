@@ -34,7 +34,6 @@ public class RegisterEmployer extends AppCompatActivity {
     private ProgressBar progressBar;
     private EditText edt_company_name,edt_industry,edt_email,edt_phone_number,edt_username,
             edt_location,edt_website,edt_company_description,edt_password,edt_password_c;
-    //private Spinner spinner_role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
