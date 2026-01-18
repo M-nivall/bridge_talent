@@ -119,7 +119,6 @@ public class AdapterPayment extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         }
     }
-
     @Override
     public int getItemCount() {
         return items.size();
