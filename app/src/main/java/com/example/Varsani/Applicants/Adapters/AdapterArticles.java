@@ -245,5 +245,4 @@ public class AdapterArticles extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
         };
     }
-
 }
