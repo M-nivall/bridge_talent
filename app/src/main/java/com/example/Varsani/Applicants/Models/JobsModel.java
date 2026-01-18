@@ -98,5 +98,4 @@ public class JobsModel {
     public String getEmployerDescription() {
         return employerDescription;
     }
-
 }
