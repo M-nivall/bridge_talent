@@ -173,4 +173,5 @@ public class ApplicantsList extends AppCompatActivity {
         finish();
         startActivity(getIntent());
     }
+
 }
