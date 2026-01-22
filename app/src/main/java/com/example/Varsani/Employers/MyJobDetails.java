@@ -89,5 +89,4 @@ public class MyJobDetails extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }
