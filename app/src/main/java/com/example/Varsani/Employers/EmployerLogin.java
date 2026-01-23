@@ -56,7 +56,7 @@ public class EmployerLogin extends AppCompatActivity {
         txv_register_employer = findViewById(R.id.txv_register_employer);
 
         session=new SessionHandler(getApplicationContext());
-//        user=session.getUserDetails();
+//      user=session.getUserDetails();
 
         progressBar.setVisibility(View.GONE);
 
@@ -74,6 +74,7 @@ public class EmployerLogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         gotostaff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
