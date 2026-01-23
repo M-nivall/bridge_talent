@@ -565,7 +565,6 @@ public class CheckOut extends AppCompatActivity {
                 return params;
 
             }
-
         };
         RequestQueue requestQueue=Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
