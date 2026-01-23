@@ -28,4 +28,5 @@ public class ArticlesMdel {
     public String getDateCreated() {
         return dateCreated;
     }
+
 }
