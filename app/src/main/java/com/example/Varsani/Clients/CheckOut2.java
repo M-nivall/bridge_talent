@@ -134,7 +134,6 @@ public class CheckOut2 extends AppCompatActivity {
 
         datePicker = new DatePickerDialog(CheckOut2.this);
 
-
         session=new SessionHandler(getApplicationContext());
         user=session.getUserDetails();
 
