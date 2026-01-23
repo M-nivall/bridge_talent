@@ -212,7 +212,6 @@ public class CheckOut2 extends AppCompatActivity {
             }
         });
 
-
         getDlvyDetails();
         getCounties();
         orderCost();
