@@ -12,7 +12,6 @@ public class CartModal {
     private String subToatl;
     private String stock;
 
-
     public CartModal(String productID, String productName, String quantity, String price,
                      String imgUrl, String itemID ,String subToatl,String stock) {
         this.productID = productID;
