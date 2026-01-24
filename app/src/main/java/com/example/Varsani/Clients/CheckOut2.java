@@ -215,7 +215,6 @@ public class CheckOut2 extends AppCompatActivity {
         getDlvyDetails();
         getCounties();
         orderCost();
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
