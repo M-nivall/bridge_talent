@@ -56,4 +56,5 @@ public class CartModal {
     public String getStock() {
         return stock;
     }
+
 }
