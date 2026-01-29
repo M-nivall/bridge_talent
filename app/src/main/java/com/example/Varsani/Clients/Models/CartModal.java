@@ -32,7 +32,6 @@ public class CartModal {
         return productName;
     }
 
-
     public String getPrice() {
         return price;
     }
@@ -56,5 +55,4 @@ public class CartModal {
     public String getStock() {
         return stock;
     }
-
 }
