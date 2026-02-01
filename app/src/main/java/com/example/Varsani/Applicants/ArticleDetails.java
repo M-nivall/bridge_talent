@@ -136,5 +136,4 @@ public class ArticleDetails extends AppCompatActivity {
         finish();
         startActivity(getIntent());
     }
-
 }
