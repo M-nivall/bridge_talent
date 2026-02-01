@@ -115,7 +115,6 @@ public class SessionHandler {
         mEditor.commit();
     }
 
-
     /**
      * Checks whether user is logged in
      *
