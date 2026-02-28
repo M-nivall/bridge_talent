@@ -58,9 +58,9 @@
 
     <string-array name="recipient">
         <item>Select Recipient</item>
-        <item>Exhibition Manager</item>
-        <item>Finance</item>
-        <item>Mentor</item>
+        <item>Finance Manager</item>
+        <item>Editorial Manager</item>
+        <item>Verification Officer</item>
     </string-array>
 
 
