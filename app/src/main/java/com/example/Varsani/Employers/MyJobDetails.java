@@ -12,7 +12,7 @@ import com.example.Varsani.R;
 
 public class MyJobDetails extends AppCompatActivity {
 
-    private TextView tvTitle, tvCategory, tvLevel, tvDescription, tvQualifications,
+    private TextView tvTitle, tvCategory, tvLevel, tvDescription, tvQualifications,tvViewReceipt,
             tvResponsibilities, tvLocation, tvType, tvSalary, tvDatePosted, tvDeadline, tvStatus;
     private Button btnViewApplicants, btnShortlistedApplicants;
     private String jobID;
@@ -37,6 +37,7 @@ public class MyJobDetails extends AppCompatActivity {
         tvDatePosted = findViewById(R.id.tvDatePosted);
         tvDeadline = findViewById(R.id.tvDeadline);
         tvStatus = findViewById(R.id.tvStatus);
+        tvViewReceipt = findViewById(R.id.tvViewReceipt);
         btnViewApplicants = findViewById(R.id.btnViewApplicants);
         btnShortlistedApplicants = findViewById(R.id.btnShortlistedApplicants);
 
@@ -69,6 +70,16 @@ public class MyJobDetails extends AppCompatActivity {
         tvDatePosted.setText(datePosted);
         tvDeadline.setText(deadline);
         tvStatus.setText(jobStatus);
+
+        tvViewReceipt.setOnClickListener(v -> {
+
+            Intent in = new Intent(MyJobDetails.this, PaymentReceipt.class);
+            in.putExtra("jobID", jobID);
+            in.putExtra("jobTitle", jobTitle);
+
+            startActivity(in);
+
+        });
 
         btnViewApplicants.setOnClickListener(v -> {
             Intent in = new Intent(MyJobDetails.this, ApplicantsList.class);

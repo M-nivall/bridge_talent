@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     tools:context=".Employers.MyJobDetails">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <!-- Job Header Card -->
         <LinearLayout
@@ -46,6 +47,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
         </LinearLayout>
 
 
@@ -58,116 +60,165 @@
             android:background="@drawable/card_bg"
             android:layout_marginBottom="16dp">
 
-            <TextView android:text="Description"
+            <TextView
+                android:text="Description"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvDescription"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Qualifications"
+            <TextView
+                android:text="Qualifications"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvQualifications"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Responsibilities"
+            <TextView
+                android:text="Responsibilities"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvResponsibilities"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Location"
+            <TextView
+                android:text="Location"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvLocation"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Job Type"
+            <TextView
+                android:text="Job Type"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvType"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Salary Range"
+            <TextView
+                android:text="Salary Range"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvSalary"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Date Posted"
+            <TextView
+                android:text="Date Posted"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvDatePosted"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Deadline"
+            <TextView
+                android:text="Deadline"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
                 android:id="@+id/tvDeadline"
                 android:textColor="#444"
                 android:layout_marginBottom="12dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
-            <TextView android:text="Job Status"
+
+            <!-- Job Status Row -->
+            <TextView
+                android:text="Job Status"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/tvStatus"
-                android:text="Active"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:paddingTop="6dp"
-                android:paddingBottom="6dp"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/status_badge"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:text="Active"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/status_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tvViewReceipt"
+                    android:text="View Receipt"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:textColor="#FFFFFF"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/receipt_badge"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
         </LinearLayout>
+
 
         <!-- VIEW APPLICANTS BUTTON -->
         <Button
@@ -180,7 +231,7 @@
             android:textSize="16sp"
             android:background="@drawable/btn_primary"
             android:textColor="#fff"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"/>
 
         <!-- SHORTLISTED APPLICANTS BUTTON -->
         <Button
@@ -192,7 +243,7 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:background="@drawable/btn_secondary"
-            android:textColor="#fff" />
+            android:textColor="#fff"/>
 
     </LinearLayout>
 

@@ -2,7 +2,7 @@ package com.example.Varsani.utils;
 
 public class Urls {
 
-    public static String ipAddress = "http://192.168.86.151/bridge_talent/";
+    public static String ipAddress = "http://192.168.43.73/bridge_talent/";
     //public static String ipAddress = "https://e98a-217-199-148-230.ngrok-free.app/bridge_talent/";
 
     private static final String ROOT_URL =ipAddress+ "android_files/";
