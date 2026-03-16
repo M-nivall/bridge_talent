@@ -1,6 +1,8 @@
 package com.example.Varsani.Employers;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.Varsani.R;
 
 public class PaymentReceipt extends AppCompatActivity {
+    private TextView tvRequestID, tvItems, tvRequestDate, tvRequestStatus, tvQuantity,tv_request_amount;
+    private String requestID, items, requestDate, requestStatus, quantity,amount;
+    private ImageView btn_printfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

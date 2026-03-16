@@ -75,7 +75,7 @@ public class MyJobDetails extends AppCompatActivity {
 
             Intent in = new Intent(MyJobDetails.this, PaymentReceipt.class);
             in.putExtra("jobID", jobID);
-            in.putExtra("jobTitle", jobTitle);
+            in.putExtra("datePosted", datePosted);
 
             startActivity(in);
 
