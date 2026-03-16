@@ -2,8 +2,8 @@ package com.example.Varsani.utils;
 
 public class Urls {
 
-    //public static String ipAddress = "http://192.168.137.172/bridge_talent/";
-    public static String ipAddress = "https://e98a-217-199-148-230.ngrok-free.app/bridge_talent/";
+    public static String ipAddress = "http://192.168.86.151/bridge_talent/";
+    //public static String ipAddress = "https://e98a-217-199-148-230.ngrok-free.app/bridge_talent/";
 
     private static final String ROOT_URL =ipAddress+ "android_files/";
     public static final String ROOT_URL_IMAGES =ipAddress+"upload_products/" ;
@@ -92,6 +92,9 @@ public class Urls {
     public static final String URL_NEW_JOBS=ROOT_URL + "verification_officer/new_jobs.php";
     public static final String URL_APPROVE_JOB=ROOT_URL + "verification_officer/approve_job.php";
     public static final String URL_ACTIVE_JOBS=ROOT_URL + "verification_officer/active_jobs.php";
+    public static final String URL_VERIFICATIONS=ROOT_URL + "verification_officer/jobs.php";
+    public static final String URL_APPLICANT_TO_VERIFY=ROOT_URL + "verification_officer/applicants.php";
+    public static final String URL_VERIFY_APPLICATION=ROOT_URL + "verification_officer/verify_application.php";
 
     //Editorial Manager
     public static final String URL_DISABLE_ARTICLE=ROOT_URL + "editorial_mrg/disable_article.php";
@@ -135,16 +138,20 @@ public class Urls {
     public static final String URL_APPLICANTS=ROOT_URL + "employer/applicants.php";
     public static final String URL_RESPOND_APPLICATION=ROOT_URL + "employer/respond_application.php";
     public static final String URL_SHORTLISTED=ROOT_URL + "employer/shortlisted.php";
+    public static final String URL_GIVE_JOB_OFFER=ROOT_URL + "employer/job_offer.php";
     //Applicant
     public static final String URL_COMPLETE_PROFILE = ROOT_URL + "applicants/complete_profile.php/";
     public static final String URL_SUBMIT_APPLICATION = ROOT_URL+"applicants/submit_application.php";
     public static final String URL_UPLOAD_ART = ROOT_URL + "artist/upload_art.php/";
     public static final String URL_APPLIED_JOBS=ROOT_URL + "applicants/job_applications.php";
+    public static final String URL_RESPOND_OFFER=ROOT_URL + "applicants/respond_offer.php";
+
     public static final String URL_MY_DONATIONS=ROOT_URL + "artist/my_donations.php";
     public static final String URL_ADD_TO_WALLET=ROOT_URL + "artist/add_to_wallet.php";
     public static final String URL_WITHDRAW=ROOT_URL + "artist/withdraw.php";
     public static final String URL_MY_WALLET_BALANCE=ROOT_URL + "artist/my_wallet.php";
     public static final String URL_MY_DONATION_HISTORY=ROOT_URL + "artist/donation_history.php";
+
 
     //Jobs
     public static final String URL_JOBS=ROOT_URL + "applicants/jobs.php";

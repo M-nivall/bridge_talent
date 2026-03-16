@@ -1,8 +1,8 @@
-package com.example.Varsani.Employers;
+package com.example.Varsani.Staff.VerificationOfficer;
 
 import static com.example.Varsani.utils.Urls.URL_DOCUMENTS;
-import static com.example.Varsani.utils.Urls.URL_GIVE_JOB_OFFER;
 import static com.example.Varsani.utils.Urls.URL_RESPOND_APPLICATION;
+import static com.example.Varsani.utils.Urls.URL_VERIFY_APPLICATION;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -24,17 +24,21 @@ import androidx.core.view.WindowInsetsCompat;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.Varsani.Employers.JobApplicationDetails;
 import com.example.Varsani.R;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class ShortlistedDetails extends AppCompatActivity {
+public class ApplicationDocumets extends AppCompatActivity {
+
     private TextView tvName, tvEmail, tvPhone, tvBio, tvSkills, tvEducation,
             tvSalary, tvNotice, tvDate, tvStatus;
 
     private Button btnViewCV, btnViewCover;
-    private Button btnShortlist, btnReject, btnJobOffer;
+    private Button btnShortlist, btnReject, btn_verify;
 
     private String cvUrl, coverLetter;
     private String applicationID;
@@ -42,7 +46,8 @@ public class ShortlistedDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shortlisted_details);
+        //EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_application_documets);
 
         //getSupportActionBar().setSubtitle("Applicant Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -64,7 +69,7 @@ public class ShortlistedDetails extends AppCompatActivity {
 
         btnShortlist = findViewById(R.id.btnShortlist);
         btnReject = findViewById(R.id.btnReject);
-        btnJobOffer = findViewById(R.id.btnJobOffer);
+        btn_verify = findViewById(R.id.btn_verify);
 
         // Get intent data
         Intent intent = getIntent();
@@ -126,9 +131,10 @@ public class ShortlistedDetails extends AppCompatActivity {
                 showResponseDialog("Rejected")
         );
 
-        btnJobOffer.setOnClickListener(v ->
-                showResponseDialog("Job Offer")
+        btn_verify.setOnClickListener(v ->
+                showResponseDialog("Verified")
         );
+
     }
 
     @Override
@@ -138,56 +144,28 @@ public class ShortlistedDetails extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    /**
-     * =============================
-     * EMPLOYER RESPONSE DIALOG
-     * =============================
-     */
     private void showResponseDialog(String applicationStatus) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
+        if (applicationStatus.equals("Verified")) {
+            builder.setTitle("Verify Documents");
+        } else {
+            builder.setTitle("Reject Application");
+        }
+
         final EditText input = new EditText(this);
+        input.setHint("Enter Remarks");
         input.setMinLines(3);
         input.setGravity(Gravity.TOP | Gravity.START);
-        input.setPadding(40, 30, 40, 30);
-
-        if (applicationStatus.equals("Job Offer")) {
-
-            builder.setTitle("Send Job Offer");
-            input.setHint("Write an offer message to the applicant (salary, start date, instructions...)");
-
-        } else {
-
-            builder.setTitle("Reject Application");
-            input.setHint("Provide feedback to the applicant (reason for rejection)");
-        }
+        input.setPadding(24, 24, 24, 24);
 
         builder.setView(input);
 
-        builder.setPositiveButton(
-                applicationStatus.equals("Job Offer") ? "SEND OFFER" : "REJECT",
-                (dialog, which) -> {
-
-                    String note = input.getText().toString().trim();
-
-                    // Prevent empty rejection feedback
-                    if (!applicationStatus.equals("Job Offer") && note.isEmpty()) {
-
-                        Toast toast = Toast.makeText(
-                                ShortlistedDetails.this,
-                                "Please provide a reason for rejection",
-                                Toast.LENGTH_SHORT
-                        );
-                        toast.setGravity(Gravity.TOP, 0, 250);
-                        toast.show();
-                        return;
-                    }
-
-                    submitEmployerResponse(applicationStatus, note);
-                }
-        );
+        builder.setPositiveButton("CONFIRM", (dialog, which) -> {
+            String note = input.getText().toString().trim();
+            submitEmployerResponse(applicationStatus, note);
+        });
 
         builder.setNegativeButton("CANCEL", (dialog, which) -> dialog.dismiss());
 
@@ -196,38 +174,56 @@ public class ShortlistedDetails extends AppCompatActivity {
 
     private void submitEmployerResponse(String status, String note) {
 
-        StringRequest request = new StringRequest(Request.Method.POST, URL_GIVE_JOB_OFFER,
+        StringRequest request = new StringRequest(Request.Method.POST, URL_VERIFY_APPLICATION,
                 response -> {
-                    Toast toast = Toast.makeText(
-                            ShortlistedDetails.this,
-                            "Application updated successfully",
-                            Toast.LENGTH_SHORT
-                    );
-                    toast.setGravity(Gravity.TOP, 0, 250);
-                    toast.show();
-                    finish();
+
+                    try {
+
+                        JSONObject obj = new JSONObject(response);
+                        int statusResponse = obj.getInt("status");
+                        String message = obj.getString("message");
+
+                        Toast toast = Toast.makeText(
+                                ApplicationDocumets.this,
+                                message,
+                                Toast.LENGTH_SHORT
+                        );
+                        toast.setGravity(Gravity.TOP, 0, 250);
+                        toast.show();
+
+                        if(statusResponse == 1){
+                            finish();
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                 },
                 error -> {
+
                     Toast toast = Toast.makeText(
-                            ShortlistedDetails.this,
-                            "Failed to update application",
+                            ApplicationDocumets.this,
+                            "Server error: " + error.getMessage(),
                             Toast.LENGTH_SHORT
                     );
                     toast.setGravity(Gravity.TOP, 0, 250);
                     toast.show();
+
                 }) {
 
             @Override
             protected Map<String, String> getParams() {
+
                 Map<String, String> params = new HashMap<>();
                 params.put("application_id", applicationID);
                 params.put("status", status);
                 params.put("employer_note", note);
+
                 return params;
             }
         };
 
         Volley.newRequestQueue(this).add(request);
     }
-
 }

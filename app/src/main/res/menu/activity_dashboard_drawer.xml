@@ -27,6 +27,9 @@
             android:id="@+id/nav_active_jobs"
             android:title="Active Jobs" />
         <item
+            android:id="@+id/nav_verify_documents"
+            android:title="Verify Documents" />
+        <item
             android:id="@+id/nav_received_donations"
             android:title="Received Donations" />
         <item
