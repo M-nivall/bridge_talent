@@ -17,6 +17,7 @@ public class ApplicantsModel {
     private String education;
     private String profileUrl;
     private String applicationStatus;
+    private String certificateUrl;
 
     // Constructor
     public ApplicantsModel(
@@ -34,7 +35,8 @@ public class ApplicantsModel {
             String skills,
             String education,
             String profileUrl,
-            String applicationStatus
+            String applicationStatus,
+            String certificateUrl
     ) {
         this.applicationId = applicationId;
         this.applicantId = applicantId;
@@ -51,6 +53,7 @@ public class ApplicantsModel {
         this.education = education;
         this.profileUrl = profileUrl;
         this.applicationStatus = applicationStatus;
+        this.certificateUrl = certificateUrl;
     }
 
     // Getters
@@ -112,5 +115,8 @@ public class ApplicantsModel {
 
     public String getApplicationStatus() {
         return applicationStatus;
+    }
+    public String getCertificateUrl() {
+        return certificateUrl;
     }
 }

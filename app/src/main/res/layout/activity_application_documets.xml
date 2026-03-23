@@ -214,6 +214,13 @@
                     android:textStyle="bold"/>
 
                 <Button
+                    android:id="@+id/btnViewCertificate"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="VIEW CERTIFICATE"
+                    android:textStyle="bold"/>
+
+                <Button
                     android:visibility="gone"
                     android:id="@+id/btnShortlist"
                     android:layout_width="match_parent"

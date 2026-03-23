@@ -2,8 +2,8 @@ package com.example.Varsani.utils;
 
 public class Urls {
 
-    public static String ipAddress = "http://192.168.43.73/bridge_talent/";
-    //public static String ipAddress = "https://e98a-217-199-148-230.ngrok-free.app/bridge_talent/";
+    //public static String ipAddress = "http://192.168.170.20/bridge_talent/";
+    public static String ipAddress = "https://d28a-197-248-201-21.ngrok-free.app/bridge_talent/";
 
     private static final String ROOT_URL =ipAddress+ "android_files/";
     public static final String ROOT_URL_IMAGES =ipAddress+"upload_products/" ;
@@ -139,6 +139,7 @@ public class Urls {
     public static final String URL_RESPOND_APPLICATION=ROOT_URL + "employer/respond_application.php";
     public static final String URL_SHORTLISTED=ROOT_URL + "employer/shortlisted.php";
     public static final String URL_GIVE_JOB_OFFER=ROOT_URL + "employer/job_offer.php";
+    public static final String URL_PAYMENT_DETAILS= ROOT_URL+"employer/payment_details.php";
     //Applicant
     public static final String URL_COMPLETE_PROFILE = ROOT_URL + "applicants/complete_profile.php/";
     public static final String URL_SUBMIT_APPLICATION = ROOT_URL+"applicants/submit_application.php";

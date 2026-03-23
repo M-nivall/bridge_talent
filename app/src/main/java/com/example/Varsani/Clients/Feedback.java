@@ -145,6 +145,7 @@ public class Feedback extends AppCompatActivity {
             protected Map<String,String>getParams()throws AuthFailureError{
                 Map<String,String>params=new HashMap<>();
                 params.put("userID",user.getClientID());
+                params.put("userType",user.getUser_type());
                 Log.e("PARAMS","" +params);
                 return params;
             }
@@ -215,6 +216,7 @@ public class Feedback extends AppCompatActivity {
                 Map<String,String>params=new HashMap<>();
                 params.put("feedback",feedback);
                 params.put("userID",user.getClientID());
+                params.put("userType",user.getUser_type());
                 params.put("recipient",recipient);
                 Log.e("PARAMS",""+params);
                 return params;

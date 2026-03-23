@@ -37,10 +37,10 @@ public class ApplicationDocumets extends AppCompatActivity {
     private TextView tvName, tvEmail, tvPhone, tvBio, tvSkills, tvEducation,
             tvSalary, tvNotice, tvDate, tvStatus;
 
-    private Button btnViewCV, btnViewCover;
+    private Button btnViewCV, btnViewCover, btnViewCertificate;
     private Button btnShortlist, btnReject, btn_verify;
 
-    private String cvUrl, coverLetter;
+    private String cvUrl, coverLetter, certificate;
     private String applicationID;
 
     @Override
@@ -66,6 +66,7 @@ public class ApplicationDocumets extends AppCompatActivity {
 
         btnViewCV = findViewById(R.id.btnViewCV);
         btnViewCover = findViewById(R.id.btnViewCover);
+        btnViewCertificate = findViewById(R.id.btnViewCertificate);
 
         btnShortlist = findViewById(R.id.btnShortlist);
         btnReject = findViewById(R.id.btnReject);
@@ -91,6 +92,7 @@ public class ApplicationDocumets extends AppCompatActivity {
 
         cvUrl = intent.getStringExtra("cvUrl");
         coverLetter = intent.getStringExtra("coverLetter");
+        certificate = intent.getStringExtra("certificate");
 
 // View CV
         btnViewCV.setOnClickListener(v -> {
@@ -116,6 +118,20 @@ public class ApplicationDocumets extends AppCompatActivity {
             }
 
             String fullCoverUrl = URL_DOCUMENTS + coverLetter;
+
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(fullCoverUrl));
+            startActivity(i);
+        });
+//View Certificate
+        btnViewCertificate.setOnClickListener(v -> {
+
+            if (certificate == null || certificate.isEmpty()) {
+                Toast.makeText(this, "Certificate not available", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String fullCoverUrl = URL_DOCUMENTS + certificate;
 
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(fullCoverUrl));

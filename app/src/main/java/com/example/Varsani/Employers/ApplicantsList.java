@@ -119,7 +119,8 @@ public class ApplicantsList extends AppCompatActivity {
                                             jsn.getString("skills"),
                                             jsn.getString("education"),
                                             jsn.getString("profile_url"),
-                                            jsn.getString("application_status")
+                                            jsn.getString("application_status"),
+                                            jsn.getString("certificate_url")
                                     );
 
                                     list.add(applicantsModel);
