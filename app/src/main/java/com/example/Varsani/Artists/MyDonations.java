@@ -313,5 +313,6 @@ public class MyDonations extends AppCompatActivity {
         super.onRestart();
         finish();
         startActivity(getIntent());
+
     }
 }
