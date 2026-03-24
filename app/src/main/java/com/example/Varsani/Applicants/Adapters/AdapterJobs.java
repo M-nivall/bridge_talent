@@ -225,7 +225,6 @@ public class AdapterJobs extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 Log.e(TAG, "error3 "+error );
                 progressDialog.dismiss();
 
-
             }
         })
         {
