@@ -160,5 +160,4 @@ public class AppliedJobs extends AppCompatActivity {
         finish();
         startActivity(getIntent());
     }
-
 }
