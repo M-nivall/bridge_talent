@@ -76,5 +76,4 @@ public class ExhibitionDetails extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }
