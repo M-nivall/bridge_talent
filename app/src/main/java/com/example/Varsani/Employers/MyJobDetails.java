@@ -15,7 +15,7 @@ public class MyJobDetails extends AppCompatActivity {
     private TextView tvTitle, tvCategory, tvLevel, tvDescription, tvQualifications,tvViewReceipt,
             tvResponsibilities, tvLocation, tvType, tvSalary, tvDatePosted, tvDeadline, tvStatus;
     private Button btnViewApplicants, btnShortlistedApplicants;
-    private String jobID;
+    private String jobID, jobTitle, datePosted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class MyJobDetails extends AppCompatActivity {
         Intent intent=getIntent();
 
         jobID=intent.getStringExtra("jobID");
-        String jobTitle=intent.getStringExtra("jobTitle");
+        jobTitle=intent.getStringExtra("jobTitle");
         String jobCategory=intent.getStringExtra("jobCategory");
         String jobLevel=intent.getStringExtra("jobLevel");
         String description=intent.getStringExtra("description");
@@ -53,7 +53,7 @@ public class MyJobDetails extends AppCompatActivity {
         String location=intent.getStringExtra("location");
         String jobType=intent.getStringExtra("jobType");
         String salaryRange=intent.getStringExtra("salaryRange");
-        String datePosted=intent.getStringExtra("datePosted");
+        datePosted=intent.getStringExtra("datePosted");
         String deadline=intent.getStringExtra("deadline");
         String jobStatus=intent.getStringExtra("jobStatus");
 
@@ -75,6 +75,7 @@ public class MyJobDetails extends AppCompatActivity {
 
             Intent in = new Intent(MyJobDetails.this, PaymentReceipt.class);
             in.putExtra("jobID", jobID);
+            in.putExtra("jobTitle", jobTitle);
             in.putExtra("datePosted", datePosted);
 
             startActivity(in);
