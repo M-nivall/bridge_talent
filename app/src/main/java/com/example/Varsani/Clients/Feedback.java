@@ -83,7 +83,6 @@ public class Feedback extends AppCompatActivity {
         });
         getFeedback();
     }
-    //
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
