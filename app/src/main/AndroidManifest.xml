@@ -334,4 +334,5 @@
             android:name=".Clients.Register"
             android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
+
 </manifest>
