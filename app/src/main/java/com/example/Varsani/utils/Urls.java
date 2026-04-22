@@ -190,5 +190,4 @@ public class Urls {
     public static final String URL_WORKSHOPS=ROOT_URL + "students/workshops.php";
     public static final String URL_REG_WORKSHOP=ROOT_URL + "students/reg_workshop.php";
     public static final String URL_CHECK_STATUS=ROOT_URL + "students/check_status.php";
-
 }
