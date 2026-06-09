@@ -5,6 +5,8 @@ import static com.example.Varsani.utils.Urls.URL_GIVE_JOB_OFFER;
 import static com.example.Varsani.utils.Urls.URL_RESPOND_APPLICATION;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -83,6 +85,13 @@ public class ShortlistedDetails extends AppCompatActivity {
 
         String status = intent.getStringExtra("applicationStatus");
         tvStatus.setText(status);
+
+        if (status.equalsIgnoreCase("Accepted")) {
+
+            btnJobOffer.setEnabled(false);
+            btnJobOffer.setText("Offer Accepted");
+            btnJobOffer.setBackgroundTintList(ColorStateList.valueOf(Color.MAGENTA));
+        }
 
         cvUrl = intent.getStringExtra("cvUrl");
         coverLetter = intent.getStringExtra("coverLetter");

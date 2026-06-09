@@ -92,6 +92,7 @@ public class AdapterApplication extends RecyclerView.Adapter<RecyclerView.ViewHo
                     in.putExtra("applicantId", o.getApplicantId());
                     in.putExtra("cvUrl", o.getCvUrl());
                     in.putExtra("coverLetter", o.getCoverLater());
+                    in.putExtra("certificate", o.getCertificateUrl());
                     in.putExtra("salary", o.getSalary());
                     in.putExtra("noticePeriod", o.getNoticePeriod());
                     in.putExtra("dateApplied", o.getDateApplied());

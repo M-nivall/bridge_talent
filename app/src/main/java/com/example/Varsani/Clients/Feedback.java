@@ -51,7 +51,6 @@ public class Feedback extends AppCompatActivity {
     private Button btn_feedback;
     private Spinner spinner;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +64,9 @@ public class Feedback extends AppCompatActivity {
 
         spinner = findViewById(R.id.select_recipient);
 
-
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.recipient,android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-//        progressBar=findViewById(R.id.progressBar);
-//        progressBar.setVisibility(View.GONE);
         session=new SessionHandler(getApplicationContext());
         user=session.getUserDetails();
         list=new ArrayList<>();
@@ -78,9 +74,6 @@ public class Feedback extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager= new GridLayoutManager(getApplicationContext(),1);
         recyclerView.setLayoutManager(layoutManager);
 
-
-
-//
         btn_feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +82,6 @@ public class Feedback extends AppCompatActivity {
         });
         getFeedback();
     }
-    //
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -145,6 +137,7 @@ public class Feedback extends AppCompatActivity {
             protected Map<String,String>getParams()throws AuthFailureError{
                 Map<String,String>params=new HashMap<>();
                 params.put("userID",user.getClientID());
+                params.put("userType",user.getUser_type());
                 Log.e("PARAMS","" +params);
                 return params;
             }
@@ -215,6 +208,7 @@ public class Feedback extends AppCompatActivity {
                 Map<String,String>params=new HashMap<>();
                 params.put("feedback",feedback);
                 params.put("userID",user.getClientID());
+                params.put("userType",user.getUser_type());
                 params.put("recipient",recipient);
                 Log.e("PARAMS",""+params);
                 return params;

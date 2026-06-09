@@ -2,8 +2,13 @@ package com.example.Varsani.utils;
 
 public class Urls {
 
+<<<<<<< HEAD
     //public static String ipAddress = "http://192.168.109.89/bridge_talent/";
     public static String ipAddress = "https://fa07-197-248-201-21.ngrok-free.app/bridge_talent/";
+=======
+    //public static String ipAddress = "http://192.168.130.40/bridge_talent/";
+    public static String ipAddress = "https://bridge-talent-admin-panel.up.railway.app/";
+>>>>>>> 30125aaaca20ff9de8cbf774b25197c03481916c
 
     private static final String ROOT_URL =ipAddress+ "android_files/";
     public static final String ROOT_URL_IMAGES =ipAddress+"upload_products/" ;
@@ -190,5 +195,4 @@ public class Urls {
     public static final String URL_WORKSHOPS=ROOT_URL + "students/workshops.php";
     public static final String URL_REG_WORKSHOP=ROOT_URL + "students/reg_workshop.php";
     public static final String URL_CHECK_STATUS=ROOT_URL + "students/check_status.php";
-
 }

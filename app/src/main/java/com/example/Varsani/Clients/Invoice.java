@@ -56,7 +56,6 @@ public class Invoice extends AppCompatActivity {
         session=new SessionHandler(getApplicationContext());
         user=session.getUserDetails();
 
-
         list=new ArrayList<>();
         recyclerView.setLayoutManager( new LinearLayoutManager( getApplicationContext() ) );
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 1);

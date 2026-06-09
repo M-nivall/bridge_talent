@@ -24,10 +24,6 @@ public class AdapterAppliedJobs extends RecyclerView.Adapter<RecyclerView.ViewHo
     private List<AppliedJobsModel> items;
     private Context ctx;
     ProgressDialog progressDialog;
-//    private OnItemClickListener mOnItemClickListener;
-//    private OnMoreButtonClickListener onMoreButtonClickListener;
-
-    //
 
     private SessionHandler session;
     private UserModel user;

@@ -69,9 +69,6 @@ public class CheckOut extends AppCompatActivity {
     private int cost;
     private int totalCost;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
