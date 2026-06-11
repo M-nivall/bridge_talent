@@ -21,7 +21,6 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
         txv_name=findViewById(R.id.txv_name);
         txv_username=findViewById(R.id.txv_username);
         txv_phoneNo=findViewById(R.id.txv_phoneNo);
