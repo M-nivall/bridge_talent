@@ -59,8 +59,6 @@
           <option name="screenY" value="2400" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
-<<<<<<< HEAD
-=======
           <option name="api" value="34" />
           <option name="brand" value="OPPO" />
           <option name="codename" value="OP5759L1" />
@@ -94,7 +92,6 @@
           <option name="screenY" value="1600" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
->>>>>>> 30125aaaca20ff9de8cbf774b25197c03481916c
           <option name="api" value="36" />
           <option name="brand" value="samsung" />
           <option name="codename" value="SC-53C" />
@@ -260,17 +257,6 @@
           <option name="screenY" value="2340" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
-          <option name="api" value="36" />
-          <option name="brand" value="samsung" />
-          <option name="codename" value="a15xtfn" />
-          <option name="id" value="a15xtfn" />
-          <option name="manufacturer" value="Samsung" />
-          <option name="name" value="Galaxy A15 5G" />
-          <option name="screenDensity" value="450" />
-          <option name="screenX" value="1080" />
-          <option name="screenY" value="2340" />
-        </PersistentDeviceSelectionData>
-        <PersistentDeviceSelectionData>
           <option name="api" value="35" />
           <option name="brand" value="samsung" />
           <option name="codename" value="a16" />
@@ -310,17 +296,6 @@
           <option name="id" value="a16xeea" />
           <option name="manufacturer" value="Samsung" />
           <option name="name" value="Galaxy A16 5G" />
-          <option name="screenDensity" value="450" />
-          <option name="screenX" value="1080" />
-          <option name="screenY" value="2340" />
-        </PersistentDeviceSelectionData>
-        <PersistentDeviceSelectionData>
-          <option name="api" value="35" />
-          <option name="brand" value="samsung" />
-          <option name="codename" value="a16xeea" />
-          <option name="id" value="a16xeea" />
-          <option name="manufacturer" value="Samsung" />
-          <option name="name" value="A16 5G" />
           <option name="screenDensity" value="450" />
           <option name="screenX" value="1080" />
           <option name="screenY" value="2340" />
@@ -518,11 +493,7 @@
           <option name="codename" value="b5qsqw" />
           <option name="id" value="b5qsqw" />
           <option name="manufacturer" value="Samsung" />
-<<<<<<< HEAD
-          <option name="name" value="Galaxy Z Flip 5" />
-=======
           <option name="name" value="Galaxy Z Flip5" />
->>>>>>> 30125aaaca20ff9de8cbf774b25197c03481916c
           <option name="screenDensity" value="340" />
           <option name="screenX" value="748" />
           <option name="screenY" value="720" />
@@ -544,11 +515,7 @@
           <option name="codename" value="b6qsqw" />
           <option name="id" value="b6qsqw" />
           <option name="manufacturer" value="Samsung" />
-<<<<<<< HEAD
-          <option name="name" value="Galaxy Z Flip 6" />
-=======
           <option name="name" value="Galaxy Z Flip6" />
->>>>>>> 30125aaaca20ff9de8cbf774b25197c03481916c
           <option name="screenDensity" value="480" />
           <option name="screenX" value="1080" />
           <option name="screenY" value="2640" />
@@ -994,6 +961,17 @@
           <option name="screenY" value="1920" />
         </PersistentDeviceSelectionData>
         <PersistentDeviceSelectionData>
+          <option name="api" value="36" />
+          <option name="brand" value="samsung" />
+          <option name="codename" value="gts10pwifi" />
+          <option name="id" value="gts10pwifi" />
+          <option name="manufacturer" value="Samsung" />
+          <option name="name" value="Galaxy Tab S10+" />
+          <option name="screenDensity" value="320" />
+          <option name="screenX" value="1752" />
+          <option name="screenY" value="2800" />
+        </PersistentDeviceSelectionData>
+        <PersistentDeviceSelectionData>
           <option name="api" value="33" />
           <option name="brand" value="samsung" />
           <option name="codename" value="gts7lwifi" />
@@ -1414,8 +1392,6 @@
         <PersistentDeviceSelectionData>
           <option name="api" value="36" />
           <option name="brand" value="samsung" />
-<<<<<<< HEAD
-=======
           <option name="codename" value="q7mq" />
           <option name="id" value="q7mq" />
           <option name="manufacturer" value="Samsung" />
@@ -1427,7 +1403,6 @@
         <PersistentDeviceSelectionData>
           <option name="api" value="36" />
           <option name="brand" value="samsung" />
->>>>>>> 30125aaaca20ff9de8cbf774b25197c03481916c
           <option name="codename" value="r0q" />
           <option name="id" value="r0q" />
           <option name="manufacturer" value="Samsung" />
