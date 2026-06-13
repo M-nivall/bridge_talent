@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.example.Varsani.utils.SessionHandler;
 import com.example.Varsani.Clients.Models.UserModel;
 import com.example.Varsani.R;
-
 public class Profile extends AppCompatActivity {
 
     private SessionHandler session;
