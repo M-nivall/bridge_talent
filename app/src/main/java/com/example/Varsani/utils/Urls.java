@@ -5,7 +5,6 @@ public class Urls {
     //public static String ipAddress = "http://192.168.130.45/bridge_talent/";
     public static String ipAddress = "https://bridge-talent-admin-panel.up.railway.app/";
 
-
     private static final String ROOT_URL =ipAddress+ "android_files/";
     public static final String ROOT_URL_IMAGES =ipAddress+"upload_products/" ;
 
