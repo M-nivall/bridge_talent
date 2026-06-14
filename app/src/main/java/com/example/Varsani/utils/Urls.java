@@ -153,7 +153,6 @@ public class Urls {
     public static final String URL_MY_WALLET_BALANCE=ROOT_URL + "artist/my_wallet.php";
     public static final String URL_MY_DONATION_HISTORY=ROOT_URL + "artist/donation_history.php";
 
-
     //Jobs
     public static final String URL_JOBS=ROOT_URL + "applicants/jobs.php";
     //Exhibition
