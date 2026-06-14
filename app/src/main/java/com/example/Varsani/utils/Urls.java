@@ -2,7 +2,7 @@ package com.example.Varsani.utils;
 
 public class Urls {
 
-    //public static String ipAddress = "http://192.168.130.45/bridge_talent/";
+    //public static String ipAddress = "http://192.168.130.45gijjg/bridge_talent/";
     public static String ipAddress = "https://bridge-talent-admin-panel.up.railway.app/";
 
 
