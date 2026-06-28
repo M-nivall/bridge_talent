@@ -194,6 +194,7 @@ public class Feedback extends AppCompatActivity {
                             btn_feedback.setVisibility(View.VISIBLE);
                         }
                     }
+
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
