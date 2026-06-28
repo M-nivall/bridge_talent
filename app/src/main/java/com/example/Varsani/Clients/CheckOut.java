@@ -560,7 +560,6 @@ public class CheckOut extends AppCompatActivity {
                 params.put("clientID",user.getClientID());
 
                 return params;
-
             }
         };
         RequestQueue requestQueue=Volley.newRequestQueue(getApplicationContext());
