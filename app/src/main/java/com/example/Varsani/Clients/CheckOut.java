@@ -546,7 +546,6 @@ public class CheckOut extends AppCompatActivity {
                             e.printStackTrace();
                             Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 }, new Response.ErrorListener() {
             @Override
