@@ -37,7 +37,6 @@ public class Profile extends AppCompatActivity {
         txv_name.setText("Name "+user.getFirstname()+" "+user.getLastname());
         txv_phoneNo.setText("Phone No "+user.getPhoneNo());
         txv_username.setText("Username "+user.getUsername());
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
