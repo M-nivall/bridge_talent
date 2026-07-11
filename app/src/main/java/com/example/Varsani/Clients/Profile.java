@@ -38,6 +38,7 @@ public class Profile extends AppCompatActivity {
         txv_phoneNo.setText("Phone No "+user.getPhoneNo());
         txv_username.setText("Username "+user.getUsername());
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
