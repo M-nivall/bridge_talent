@@ -45,7 +45,6 @@ public class PaymentReceipt extends AppCompatActivity {
         //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_payment_receipt);
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
