@@ -48,7 +48,6 @@ public class PaymentReceipt extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        // Initialize TextViews
         tv_payment_id = findViewById(R.id.tv_payment_id);
         tv_name = findViewById(R.id.tv_name);
         tv_job_posted = findViewById(R.id.tv_job_posted);
