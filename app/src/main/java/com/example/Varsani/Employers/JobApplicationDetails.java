@@ -37,7 +37,6 @@ public class JobApplicationDetails extends AppCompatActivity {
     private String cvUrl, coverLetter, certificate;
     private String applicationID;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
